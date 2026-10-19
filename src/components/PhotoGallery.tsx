@@ -1,6 +1,20 @@
-To get your photo gallery working right away with the Unsplash placeholders, **replace just the `GALLERY_ITEMS` array at the top of your code** with this updated version:
+import React, { useState } from 'react';
+import { Camera, Building2, GraduationCap, Flame, MapPin, Users, Calendar, ArrowRight, X, ChevronLeft, ChevronRight, CheckCircle2 } from 'lucide-react';
 
-```tsx
+export interface GalleryItem {
+  id: string;
+  title: string;
+  category: 'industrial' | 'educational' | 'camping';
+  categoryLabel: string;
+  institution: string;
+  batchSize: string;
+  location: string;
+  date: string;
+  imageUrl: string;
+  description: string;
+  takeaways: string[];
+}
+
 export const GALLERY_ITEMS: GalleryItem[] = [
   {
     id: 'g-1',
@@ -11,7 +25,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     batchSize: '115 Students · 4 Faculty Escorts',
     location: 'Mysuru & Ramanagara Industrial Corridor, Karnataka',
     date: 'Recent Batch',
-    imageUrl: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: '[https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=80](https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=80)',
     description: 'Students from Mechanical and Production Engineering underwent an immersive technical plant walkthrough examining CNC multi-axis machining, automated textile reeling, and quality inspection systems.',
     takeaways: [
       'Hands-on observation of industrial automation & production lines',
@@ -28,7 +42,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     batchSize: '85 Students · 3 Faculty Guides',
     location: 'Hampi UNESCO World Heritage Site, Karnataka',
     date: 'Recent Batch',
-    imageUrl: 'https://images.unsplash.com/photo-1609137144813-7524672bc312?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: '[https://images.unsplash.com/photo-1609137144813-7524672bc312?auto=format&fit=crop&w=1200&q=80](https://images.unsplash.com/photo-1609137144813-7524672bc312?auto=format&fit=crop&w=1200&q=80)',
     description: 'A 3-day experiential field survey analyzing Vijayanagara monolithic architecture, stepwell hydraulics, and temple acoustics at Vittala Temple, guided by certified ASI historians.',
     takeaways: [
       'Comprehensive on-site architectural drawings & acoustic analysis',
@@ -45,7 +59,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     batchSize: '65 Students · 2 Faculty Escorts',
     location: 'Madikeri, Coorg, Karnataka',
     date: 'Recent Batch',
-    imageUrl: 'https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: '[https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=1200&q=80](https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=1200&q=80)',
     description: 'After completing coffee agro-processing workshops, students and faculty gathered for an acoustic campfire night in the pine valleys of Coorg with traditional Kodava dinner.',
     takeaways: [
       'Team-building obstacle trails and plantation orienteering',
@@ -62,7 +76,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     batchSize: '140 Students · 5 Faculty Escorts',
     location: 'HAL & Aerospace Innovation Corridor, Bengaluru',
     date: 'Recent Batch',
-    imageUrl: 'https://images.unsplash.com/photo-1517976487492-5750f3195933?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: '[https://images.unsplash.com/photo-1517976487492-5750f3195933?auto=format&fit=crop&w=1200&q=80](https://images.unsplash.com/photo-1517976487492-5750f3195933?auto=format&fit=crop&w=1200&q=80)',
     description: 'In-depth aerospace industrial tour covering indigenous Tejas fighter jet avionics, jet propulsion turbines, flight simulators, and ISRO satellite payload integration systems.',
     takeaways: [
       'Direct interaction with aeronautical test engineers',
@@ -79,7 +93,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     batchSize: '95 Students · 4 Teachers',
     location: 'Mysuru Palace & Srirangapatna, Karnataka',
     date: 'Recent Batch',
-    imageUrl: 'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: '[https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=1200&q=80](https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=1200&q=80)',
     description: 'Curated heritage exploration of the illuminated Amba Vilas Palace, Tippu Sultan’s summer palace, and ancient military defense walls, combined with KSIC silk mill exposure.',
     takeaways: [
       'Private royal durbar hall guided walkthrough',
@@ -96,7 +110,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     batchSize: '50 Students · 2 Wildlife Naturalists',
     location: 'Nagarhole & Kabini River, Karnataka',
     date: 'Recent Batch',
-    imageUrl: 'https://images.unsplash.com/photo-1534567153574-2b12153a87f0?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: '[https://images.unsplash.com/photo-1534567153574-2b12153a87f0?auto=format&fit=crop&w=1200&q=80](https://images.unsplash.com/photo-1534567153574-2b12153a87f0?auto=format&fit=crop&w=1200&q=80)',
     description: 'Students conducted riverboat wildlife census counts on the Kabini River, documenting wild Asian elephant herds, marsh crocodiles, and Western Ghats avian diversity.',
     takeaways: [
       'Forest department river boat and 4x4 open safari fieldwork',
@@ -105,7 +119,3 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     ],
   },
 ];
-
-```
-
-Copy and paste this snippet over your existing `GALLERY_ITEMS` array, and your component will instantly render all images correctly!
