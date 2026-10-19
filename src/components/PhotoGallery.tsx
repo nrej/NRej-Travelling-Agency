@@ -28,7 +28,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     batchSize: '115 Students · 4 Faculty Escorts',
     location: 'Mysuru & Ramanagara Industrial Corridor, Karnataka',
     date: 'Recent Batch',
-    imageUrl: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: '/images/gallery_iv_factory_tour_1792402557123.jpg',
     description: 'Students from Mechanical and Production Engineering underwent an immersive technical plant walkthrough examining CNC multi-axis machining, automated textile reeling, and quality inspection systems.',
     takeaways: [
       'Hands-on observation of industrial automation & production lines',
@@ -45,7 +45,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     batchSize: '85 Students · 3 Faculty Guides',
     location: 'Hampi UNESCO World Heritage Site, Karnataka',
     date: 'Recent Batch',
-    imageUrl: 'https://images.unsplash.com/photo-1627916607164-7b20241db935?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: '/images/gallery_student_hampi_1792402557076.jpg',
     description: 'A 3-day experiential field survey analyzing Vijayanagara monolithic architecture, stepwell hydraulics, and temple acoustics at Vittala Temple, guided by certified ASI historians.',
     takeaways: [
       'Comprehensive on-site architectural drawings & acoustic analysis',
@@ -62,7 +62,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     batchSize: '65 Students · 2 Faculty Escorts',
     location: 'Madikeri, Coorg, Karnataka',
     date: 'Recent Batch',
-    imageUrl: 'https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: '/images/gallery_coorg_bonfire_1792402557907.jpg',
     description: 'After completing coffee agro-processing workshops, students and faculty gathered for an acoustic campfire night in the pine valleys of Coorg with traditional Kodava dinner.',
     takeaways: [
       'Team-building obstacle trails and plantation orienteering',
@@ -79,7 +79,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     batchSize: '140 Students · 5 Faculty Escorts',
     location: 'HAL & Aerospace Innovation Corridor, Bengaluru',
     date: 'Recent Batch',
-    imageUrl: 'https://images.unsplash.com/photo-1517976487492-5750f3195933?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: '/images/dest_industrial_bangalore_1792395164842.jpg',
     description: 'In-depth aerospace industrial tour covering indigenous Tejas fighter jet avionics, jet propulsion turbines, flight simulators, and ISRO satellite payload integration systems.',
     takeaways: [
       'Direct interaction with aeronautical test engineers',
@@ -96,7 +96,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     batchSize: '95 Students · 4 Teachers',
     location: 'Mysuru Palace & Srirangapatna, Karnataka',
     date: 'Recent Batch',
-    imageUrl: 'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: '/images/hero_mysore_karnataka_1792395162647.jpg',
     description: 'Curated heritage exploration of the illuminated Amba Vilas Palace, Tippu Sultan’s summer palace, and ancient military defense walls, combined with KSIC silk mill exposure.',
     takeaways: [
       'Private royal durbar hall guided walkthrough',
@@ -113,7 +113,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     batchSize: '50 Students · 2 Wildlife Naturalists',
     location: 'Nagarhole & Kabini River, Karnataka',
     date: 'Recent Batch',
-    imageUrl: 'https://images.unsplash.com/photo-1534567153574-2b12153a87f0?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: '/images/dest_kabini_safari_1792395163837.jpg',
     description: 'Students conducted riverboat wildlife census counts on the Kabini River, documenting wild Asian elephant herds, marsh crocodiles, and Western Ghats avian diversity.',
     takeaways: [
       'Forest department river boat and 4x4 open safari fieldwork',
@@ -188,7 +188,7 @@ export function PhotoGallery({ onOpenBooking }: PhotoGalleryProps) {
                   onError={(e) => {
                     // Safe fallback if network blocks image
                     (e.currentTarget as HTMLImageElement).src =
-                      'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=80';
+                      '/images/hero_india_travel_1792393897902.jpg';
                   }}
                 />
                 <span className="absolute top-3 left-3 bg-slate-900/80 backdrop-blur-md text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">

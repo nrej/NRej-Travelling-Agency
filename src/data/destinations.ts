@@ -1,6 +1,6 @@
 import { Destination } from '../types/travel';
 
-export const HERO_IMAGE = '/src/assets/images/hero_mysore_karnataka_1792395162647.jpg';
+export const HERO_IMAGE = '/images/hero_mysore_karnataka_1792395162647.jpg';
 
 export const DESTINATIONS: Destination[] = [
   {
@@ -15,7 +15,7 @@ export const DESTINATIONS: Destination[] = [
     durationDays: 3,
     startingPriceInr: 6800,
     bestSeason: 'Year-Round (Best: Sep – Mar)',
-    imageUrl: '/src/assets/images/hero_mysore_karnataka_1792395162647.jpg',
+    imageUrl: '/images/hero_mysore_karnataka_1792395162647.jpg',
     vibe: 'Regal Splendor · Industrial Textile Heritage · Architectural Wonder',
     featured: true,
     idealFor: 'Engineering, Polytechnic & Commerce College IVs + Family Heritage Groups',
@@ -65,7 +65,7 @@ export const DESTINATIONS: Destination[] = [
     durationDays: 4,
     startingPriceInr: 8500,
     bestSeason: 'October – March',
-    imageUrl: '/src/assets/images/dest_hampi_heritage_1792395164558.jpg',
+    imageUrl: '/images/dest_hampi_heritage_1792395164558.jpg',
     vibe: 'Monolithic Grandeur · Archaeological Wonder · Living History',
     featured: true,
     idealFor: 'Architecture, Civil Engineering, History Schools & College Study Tours',
@@ -121,7 +121,7 @@ export const DESTINATIONS: Destination[] = [
     durationDays: 3,
     startingPriceInr: 7200,
     bestSeason: 'Year-Round',
-    imageUrl: '/src/assets/images/dest_industrial_bangalore_1792395164842.jpg',
+    imageUrl: '/images/dest_industrial_bangalore_1792395164842.jpg',
     vibe: 'High-Tech Innovation · Aerospace Engineering · Futuristic Hub',
     featured: true,
     idealFor: 'Engineering, Computer Science, Polytechnic & MBA Students',
@@ -171,7 +171,7 @@ export const DESTINATIONS: Destination[] = [
     durationDays: 4,
     startingPriceInr: 9200,
     bestSeason: 'September – May',
-    imageUrl: '/src/assets/images/dest_coorg_coffee_1792395163120.jpg',
+    imageUrl: '/images/dest_coorg_coffee_1792395163120.jpg',
     vibe: 'Misty Hills · Coffee Aroma · Western Ghats Tranquility',
     featured: true,
     idealFor: 'Agro-Science Students, Corporate Offsites, College Picnics & Families',
@@ -227,7 +227,7 @@ export const DESTINATIONS: Destination[] = [
     durationDays: 3,
     startingPriceInr: 9800,
     bestSeason: 'October – May',
-    imageUrl: '/src/assets/images/dest_kabini_safari_1792395163837.jpg',
+    imageUrl: '/images/dest_kabini_safari_1792395163837.jpg',
     vibe: 'Untamed Jungle · River Safari · Ecological Reverence',
     idealFor: 'Ecology & Zoology Students, Nature Lovers, Photography Clubs',
     highlights: [
@@ -276,7 +276,7 @@ export const DESTINATIONS: Destination[] = [
     durationDays: 4,
     startingPriceInr: 7900,
     bestSeason: 'October – May',
-    imageUrl: '/src/assets/images/dest_hampi_heritage_1792395164558.jpg',
+    imageUrl: '/images/dest_hampi_heritage_1792395164558.jpg',
     vibe: 'Adrenaline Rush · Hydropower Mechanics · Coastal Splendor',
     idealFor: 'Civil, Mechanical & Electrical Engineering IVs + Adventure Youth Groups',
     highlights: [

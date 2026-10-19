@@ -15,7 +15,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenBooking }) => 
           <div className="lg:col-span-5 relative space-y-4">
             <div className="relative rounded-2xl overflow-hidden bg-white border border-neutral-200 shadow-2xl aspect-[4/3]">
               <img
-                src="/src/assets/images/gallery_student_hampi_1792402557076.jpg"
+                src="/images/gallery_student_hampi_1792402557076.jpg"
                 alt="Students on an educational heritage study tour organized by NRej Travelling Agency"
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover"

@@ -13,7 +13,7 @@ export const EDUCATIONAL_PROGRAMMES = [
     target: 'High School, PU & Degree History / Architecture Students',
     duration: '3 Days / 2 Nights',
     location: 'Hampi, Badami, Aihole & Pattadakal',
-    imageUrl: '/src/assets/images/dest_hampi_heritage_1792395164558.jpg',
+    imageUrl: '/images/dest_hampi_heritage_1792395164558.jpg',
     description:
       'Immersive study tour exploring 14th-century Vijayanagara monolithic architecture, stepwell hydraulics, Vittala Temple stone chariot, and Chalukyan cave temples.',
     curriculumConnections: [
@@ -29,7 +29,7 @@ export const EDUCATIONAL_PROGRAMMES = [
     target: 'Middle School, High School & PU Colleges',
     duration: '3 Days / 2 Nights',
     location: 'Mysuru, Srirangapatna & Chamundi Hills',
-    imageUrl: '/src/assets/images/hero_mysore_karnataka_1792395162647.jpg',
+    imageUrl: '/images/hero_mysore_karnataka_1792395162647.jpg',
     description:
       'A comprehensive educational itinerary combining royal Mysuru Palace art, Tipu Sultan’s 18th-century military history, botanical study at Brindavan Gardens, and regional zoology.',
     curriculumConnections: [
@@ -45,7 +45,7 @@ export const EDUCATIONAL_PROGRAMMES = [
     target: 'Science & Computer Science Students (Classes 8–12 & PU)',
     duration: '2 to 3 Days',
     location: 'Bengaluru Science Corridor',
-    imageUrl: '/src/assets/images/dest_industrial_bangalore_1792395164842.jpg',
+    imageUrl: '/images/dest_industrial_bangalore_1792395164842.jpg',
     description:
       'Hands-on interactive science excursions visiting Visvesvaraya Industrial & Technological Museum, Jawaharlal Nehru Planetarium, and HAL Heritage Centre.',
     curriculumConnections: [
@@ -61,7 +61,7 @@ export const EDUCATIONAL_PROGRAMMES = [
     target: 'Biology, Environmental Science & Geography Students',
     duration: '3 to 4 Days',
     location: 'Coorg, Chikmagalur & Western Ghats',
-    imageUrl: '/src/assets/images/dest_coorg_coffee_1792395163120.jpg',
+    imageUrl: '/images/dest_coorg_coffee_1792395163120.jpg',
     description:
       'Field survey studying tropical rainforest ecosystems, river basin geography, indigenous plant species, and agro-forestry in the UNESCO Western Ghats biodiversity hotspot.',
     curriculumConnections: [
