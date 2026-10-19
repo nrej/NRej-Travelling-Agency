@@ -42,7 +42,7 @@ export const BUSINESS_CONFIG: BusinessConfig = {
   mobile1Formatted: '+91 90353 07947',
   mobile2: '7676172921',
   mobile2Formatted: '+91 76761 72921',
-  email: 'nrejtravel@gmail.com',
+  email: 'nrejtravels@gmail.com',
   location: {
     village: 'Kottur Ayyanhalli',
     talukDistrict: 'Kottur',

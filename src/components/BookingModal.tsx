@@ -3,6 +3,7 @@ import { X, CheckCircle, Send, ShieldCheck, Mail, Phone, Calendar, Users, Indian
 import { DESTINATIONS } from '../data/destinations';
 import { BookingSubmission } from '../types/travel';
 import { BUSINESS_CONFIG, getWhatsAppInquiryUrl } from '../data/businessConfig';
+import { submitNetlifyForm } from '../lib/submitForm';
 
 interface BookingModalProps {
   isOpen: boolean;
@@ -35,6 +36,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
   const [submitted, setSubmitted] = useState(false);
   const [submissionId, setSubmissionId] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
+  const [isSending, setIsSending] = useState(false);
 
   useEffect(() => {
     if (prefilledDestination) {
@@ -67,8 +69,9 @@ export const BookingModal: React.FC<BookingModalProps> = ({
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (isSending) return;
     if (!formData.fullName.trim()) {
       setErrorMsg('Please enter your contact name.');
       return;
@@ -85,6 +88,32 @@ export const BookingModal: React.FC<BookingModalProps> = ({
 
     setErrorMsg('');
     const randomCode = 'NREJ-ENQ-' + Math.floor(100000 + Math.random() * 900000);
+
+    setIsSending(true);
+    try {
+      await submitNetlifyForm('booking-request', {
+        subject: `New tour booking enquiry ${randomCode} from ${formData.fullName}`,
+        referenceId: randomCode,
+        fullName: formData.fullName,
+        institutionName: formData.institutionName,
+        email: formData.email,
+        phone: formData.phone,
+        destination: formData.destination,
+        tripType: formData.tripType,
+        dates: formData.dates || 'Upcoming Academic Term',
+        travelers: formData.travelers,
+        budgetPerPerson: formData.budgetPerPerson,
+        specialRequests: formData.specialRequests,
+      });
+    } catch {
+      setErrorMsg(
+        `We couldn't send your enquiry. Please try again, or contact us on WhatsApp or at ${BUSINESS_CONFIG.email}.`,
+      );
+      return;
+    } finally {
+      setIsSending(false);
+    }
+
     setSubmissionId(randomCode);
 
     // Save to local storage for persistence
@@ -396,10 +425,11 @@ Notes: ${formData.specialRequests || 'Please provide quotation and day-wise sche
               <div className="pt-2">
                 <button
                   type="submit"
-                  className="w-full py-3.5 text-xs font-bold uppercase tracking-wider text-slate-950 bg-amber-400 hover:bg-amber-300 rounded-lg transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-lg shadow-amber-400/10 font-sans"
+                  disabled={isSending}
+                  className="w-full py-3.5 text-xs font-bold uppercase tracking-wider text-slate-950 bg-amber-400 hover:bg-amber-300 disabled:opacity-60 disabled:cursor-wait rounded-lg transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-lg shadow-amber-400/10 font-sans"
                 >
                   <Send className="w-4 h-4" />
-                  <span>Submit Tour Enquiry</span>
+                  <span>{isSending ? 'Sending…' : 'Submit Tour Enquiry'}</span>
                 </button>
                 <div className="flex items-center justify-between text-[11px] text-neutral-600 mt-2 px-1">
                   <span>Contact: {BUSINESS_CONFIG.contactPerson} ({BUSINESS_CONFIG.mobile1Formatted})</span>

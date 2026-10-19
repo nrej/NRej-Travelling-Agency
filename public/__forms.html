@@ -1,0 +1,38 @@
+<!-- Hidden form definitions so Netlify Forms detects the React forms at build time. -->
+<!DOCTYPE html>
+<html>
+  <body>
+    <form name="contact-enquiry" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="contact-enquiry" />
+      <input name="subject" />
+      <input name="referenceId" />
+      <input name="fullName" />
+      <input name="institutionName" />
+      <input name="designation" />
+      <input name="phone" />
+      <input name="email" />
+      <input name="serviceType" />
+      <input name="destination" />
+      <input name="tentativeDate" />
+      <input name="travelerCount" />
+      <textarea name="message"></textarea>
+      <input name="bot-field" />
+    </form>
+    <form name="booking-request" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="booking-request" />
+      <input name="subject" />
+      <input name="referenceId" />
+      <input name="fullName" />
+      <input name="institutionName" />
+      <input name="email" />
+      <input name="phone" />
+      <input name="destination" />
+      <input name="tripType" />
+      <input name="dates" />
+      <input name="travelers" />
+      <input name="budgetPerPerson" />
+      <textarea name="specialRequests"></textarea>
+      <input name="bot-field" />
+    </form>
+  </body>
+</html>
