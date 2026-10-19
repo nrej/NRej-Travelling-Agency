@@ -32,14 +32,14 @@ export const NrejLogo: React.FC<NrejLogoProps> = ({
       {showText && (
         <div className="flex flex-col text-left">
           <div className="flex items-baseline gap-1.5">
-            <span className={`text-xl sm:text-2xl font-bold tracking-tight ${lightMode ? 'text-slate-900' : 'text-white'}`}>
-              <span className="text-sky-400">N</span>Rej
+            <span className={`text-xl sm:text-2xl font-bold tracking-tight ${lightMode ? 'text-slate-900' : 'text-neutral-900'}`}>
+              <span className="text-sky-600">N</span>Rej
             </span>
-            <span className={`text-xs sm:text-sm font-semibold tracking-wide uppercase ${lightMode ? 'text-slate-700' : 'text-neutral-200'}`}>
+            <span className={`text-xs sm:text-sm font-semibold tracking-wide uppercase ${lightMode ? 'text-slate-700' : 'text-neutral-800'}`}>
               Travelling Agency
             </span>
           </div>
-          <span className="text-[10px] uppercase font-mono tracking-widest text-amber-400 font-semibold mt-0.5">
+          <span className="text-[10px] uppercase font-mono tracking-widest text-amber-600 font-semibold mt-0.5">
             {BUSINESS_CONFIG.tagline}
           </span>
         </div>

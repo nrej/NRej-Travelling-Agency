@@ -146,23 +146,23 @@ Notes: ${formData.specialRequests || 'Please provide quotation and day-wise sche
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 lg:p-8 bg-black/90 backdrop-blur-md overflow-y-auto">
       <div 
-        className="relative w-full max-w-2xl bg-neutral-950 border border-neutral-800 rounded-2xl shadow-2xl overflow-hidden my-auto"
+        className="relative w-full max-w-2xl bg-white border border-neutral-200 rounded-2xl shadow-2xl overflow-hidden my-auto"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Modal Header */}
-        <div className="p-6 border-b border-neutral-900 flex items-center justify-between gap-4 bg-neutral-900 sticky top-0 z-10">
+        <div className="p-6 border-b border-neutral-50 flex items-center justify-between gap-4 bg-neutral-50 sticky top-0 z-10">
           <div>
-            <div className="text-xs font-mono uppercase tracking-wider text-sky-400 font-semibold flex items-center gap-1.5">
+            <div className="text-xs font-mono uppercase tracking-wider text-sky-600 font-semibold flex items-center gap-1.5">
               <Building2 className="w-3.5 h-3.5" />
               <span>{BUSINESS_CONFIG.businessName} · {BUSINESS_CONFIG.location.village}, Karnataka</span>
             </div>
-            <h2 className="text-xl sm:text-2xl font-bold text-white mt-1">
+            <h2 className="text-xl sm:text-2xl font-bold text-neutral-900 mt-1">
               {submitted ? 'Enquiry Logged' : 'Plan Your Tour / Request Quotation'}
             </h2>
           </div>
           <button
             onClick={resetForm}
-            className="p-2 text-neutral-400 hover:text-white rounded-lg hover:bg-neutral-800 transition-colors cursor-pointer"
+            className="p-2 text-neutral-600 hover:text-neutral-900 rounded-lg hover:bg-neutral-200 transition-colors cursor-pointer"
             aria-label="Close modal"
           >
             <X className="w-5 h-5" />
@@ -173,41 +173,41 @@ Notes: ${formData.specialRequests || 'Please provide quotation and day-wise sche
         <div className="p-6 sm:p-8 max-h-[80vh] overflow-y-auto">
           {submitted ? (
             <div className="text-center py-6 space-y-6">
-              <div className="w-16 h-16 rounded-full bg-emerald-950/60 border border-emerald-800 flex items-center justify-center text-emerald-400 mx-auto">
+              <div className="w-16 h-16 rounded-full bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600 mx-auto">
                 <CheckCircle className="w-8 h-8" />
               </div>
 
               <div className="space-y-2">
-                <h3 className="text-2xl font-bold text-white">
+                <h3 className="text-2xl font-bold text-neutral-900">
                   Namaskara, {formData.fullName.split(' ')[0]}!
                 </h3>
-                <p className="text-sm text-neutral-300 max-w-md mx-auto leading-relaxed">
-                  Your enquiry for <strong className="text-white">{formData.destination}</strong> ({formData.tripType}) has been sent to <strong className="text-amber-400">{BUSINESS_CONFIG.contactPerson}</strong> at {BUSINESS_CONFIG.businessName}.
+                <p className="text-sm text-neutral-700 max-w-md mx-auto leading-relaxed">
+                  Your enquiry for <strong className="text-neutral-900">{formData.destination}</strong> ({formData.tripType}) has been sent to <strong className="text-amber-600">{BUSINESS_CONFIG.contactPerson}</strong> at {BUSINESS_CONFIG.businessName}.
                 </p>
               </div>
 
-              <div className="p-4 rounded-xl bg-neutral-900 border border-neutral-800 text-left max-w-md mx-auto space-y-2 text-xs">
+              <div className="p-4 rounded-xl bg-neutral-50 border border-neutral-200 text-left max-w-md mx-auto space-y-2 text-xs">
                 <div className="flex justify-between">
-                  <span className="text-neutral-400 uppercase font-mono">Reference Code:</span>
-                  <span className="text-amber-400 font-mono font-bold">{submissionId}</span>
+                  <span className="text-neutral-600 uppercase font-mono">Reference Code:</span>
+                  <span className="text-amber-600 font-mono font-bold">{submissionId}</span>
                 </div>
                 {formData.institutionName && (
                   <div className="flex justify-between">
-                    <span className="text-neutral-400 uppercase font-mono">Institution:</span>
-                    <span className="text-neutral-200">{formData.institutionName}</span>
+                    <span className="text-neutral-600 uppercase font-mono">Institution:</span>
+                    <span className="text-neutral-800">{formData.institutionName}</span>
                   </div>
                 )}
                 <div className="flex justify-between">
-                  <span className="text-neutral-400 uppercase font-mono">Service:</span>
-                  <span className="text-sky-400 font-semibold">{formData.tripType}</span>
+                  <span className="text-neutral-600 uppercase font-mono">Service:</span>
+                  <span className="text-sky-600 font-semibold">{formData.tripType}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-neutral-400 uppercase font-mono">Group Size:</span>
-                  <span className="text-neutral-200">{formData.travelers} Travelers</span>
+                  <span className="text-neutral-600 uppercase font-mono">Group Size:</span>
+                  <span className="text-neutral-800">{formData.travelers} Travelers</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-neutral-400 uppercase font-mono">Official Email:</span>
-                  <span className="text-neutral-300">{BUSINESS_CONFIG.email}</span>
+                  <span className="text-neutral-600 uppercase font-mono">Official Email:</span>
+                  <span className="text-neutral-700">{BUSINESS_CONFIG.email}</span>
                 </div>
               </div>
 
@@ -237,7 +237,7 @@ Notes: ${formData.specialRequests || 'Please provide quotation and day-wise sche
           ) : (
             <form onSubmit={handleSubmit} className="space-y-5">
               {errorMsg && (
-                <div className="p-3.5 rounded-xl bg-red-950/40 border border-red-800 text-xs text-red-300">
+                <div className="p-3.5 rounded-xl bg-red-50 border border-red-200 text-xs text-red-700">
                   {errorMsg}
                 </div>
               )}
@@ -245,7 +245,7 @@ Notes: ${formData.specialRequests || 'Please provide quotation and day-wise sche
               {/* Name & College */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-1.5">
-                  <label className="text-xs font-semibold uppercase tracking-wider text-neutral-400">
+                  <label className="text-xs font-semibold uppercase tracking-wider text-neutral-600">
                     Contact Person Name *
                   </label>
                   <input
@@ -254,12 +254,12 @@ Notes: ${formData.specialRequests || 'Please provide quotation and day-wise sche
                     placeholder="e.g. Prof. Ramesh / Dr. S. Kumar"
                     value={formData.fullName}
                     onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                    className="w-full px-4 py-2.5 bg-neutral-900 border border-neutral-800 rounded-xl text-neutral-100 text-sm placeholder:text-neutral-600 focus:border-amber-400 focus:outline-none transition-colors"
+                    className="w-full px-4 py-2.5 bg-neutral-50 border border-neutral-200 rounded-xl text-neutral-900 text-sm placeholder:text-neutral-400 focus:border-amber-400 focus:outline-none transition-colors"
                   />
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="text-xs font-semibold uppercase tracking-wider text-neutral-400">
+                  <label className="text-xs font-semibold uppercase tracking-wider text-neutral-600">
                     School / College / Organization *
                   </label>
                   <input
@@ -268,7 +268,7 @@ Notes: ${formData.specialRequests || 'Please provide quotation and day-wise sche
                     placeholder="e.g. Government Degree College / Public School"
                     value={formData.institutionName}
                     onChange={(e) => setFormData({ ...formData, institutionName: e.target.value })}
-                    className="w-full px-4 py-2.5 bg-neutral-900 border border-neutral-800 rounded-xl text-neutral-100 text-sm placeholder:text-neutral-600 focus:border-amber-400 focus:outline-none transition-colors"
+                    className="w-full px-4 py-2.5 bg-neutral-50 border border-neutral-200 rounded-xl text-neutral-900 text-sm placeholder:text-neutral-400 focus:border-amber-400 focus:outline-none transition-colors"
                   />
                 </div>
               </div>
@@ -276,8 +276,8 @@ Notes: ${formData.specialRequests || 'Please provide quotation and day-wise sche
               {/* Email & Phone */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-1.5">
-                  <label className="text-xs font-semibold uppercase tracking-wider text-neutral-400 flex items-center gap-1.5">
-                    <Mail className="w-3.5 h-3.5 text-sky-400" />
+                  <label className="text-xs font-semibold uppercase tracking-wider text-neutral-600 flex items-center gap-1.5">
+                    <Mail className="w-3.5 h-3.5 text-sky-600" />
                     <span>Email Address *</span>
                   </label>
                   <input
@@ -286,13 +286,13 @@ Notes: ${formData.specialRequests || 'Please provide quotation and day-wise sche
                     placeholder="e.g. principal@college.edu.in"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-4 py-2.5 bg-neutral-900 border border-neutral-800 rounded-xl text-neutral-100 text-sm placeholder:text-neutral-600 focus:border-amber-400 focus:outline-none transition-colors"
+                    className="w-full px-4 py-2.5 bg-neutral-50 border border-neutral-200 rounded-xl text-neutral-900 text-sm placeholder:text-neutral-400 focus:border-amber-400 focus:outline-none transition-colors"
                   />
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="text-xs font-semibold uppercase tracking-wider text-neutral-400 flex items-center gap-1.5">
-                    <Phone className="w-3.5 h-3.5 text-amber-400" />
+                  <label className="text-xs font-semibold uppercase tracking-wider text-neutral-600 flex items-center gap-1.5">
+                    <Phone className="w-3.5 h-3.5 text-amber-600" />
                     <span>Mobile / WhatsApp Number *</span>
                   </label>
                   <input
@@ -301,7 +301,7 @@ Notes: ${formData.specialRequests || 'Please provide quotation and day-wise sche
                     placeholder="e.g. 9876543210"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full px-4 py-2.5 bg-neutral-900 border border-neutral-800 rounded-xl text-neutral-100 text-sm placeholder:text-neutral-600 focus:border-amber-400 focus:outline-none transition-colors"
+                    className="w-full px-4 py-2.5 bg-neutral-50 border border-neutral-200 rounded-xl text-neutral-900 text-sm placeholder:text-neutral-400 focus:border-amber-400 focus:outline-none transition-colors"
                   />
                 </div>
               </div>
@@ -309,13 +309,13 @@ Notes: ${formData.specialRequests || 'Please provide quotation and day-wise sche
               {/* Destination & Service Type */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-1.5">
-                  <label className="text-xs font-semibold uppercase tracking-wider text-neutral-400">
+                  <label className="text-xs font-semibold uppercase tracking-wider text-neutral-600">
                     Destination / Circuit
                   </label>
                   <select
                     value={formData.destination}
                     onChange={(e) => setFormData({ ...formData, destination: e.target.value })}
-                    className="w-full px-4 py-2.5 bg-neutral-900 border border-neutral-800 rounded-xl text-neutral-100 text-sm focus:border-amber-400 focus:outline-none transition-colors cursor-pointer"
+                    className="w-full px-4 py-2.5 bg-neutral-50 border border-neutral-200 rounded-xl text-neutral-900 text-sm focus:border-amber-400 focus:outline-none transition-colors cursor-pointer"
                   >
                     {DESTINATIONS.map((d) => (
                       <option key={d.id} value={d.title}>
@@ -327,13 +327,13 @@ Notes: ${formData.specialRequests || 'Please provide quotation and day-wise sche
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="text-xs font-semibold uppercase tracking-wider text-neutral-400">
+                  <label className="text-xs font-semibold uppercase tracking-wider text-neutral-600">
                     Service Format
                   </label>
                   <select
                     value={formData.tripType}
                     onChange={(e) => setFormData({ ...formData, tripType: e.target.value })}
-                    className="w-full px-4 py-2.5 bg-neutral-900 border border-neutral-800 rounded-xl text-neutral-100 text-sm focus:border-amber-400 focus:outline-none transition-colors cursor-pointer"
+                    className="w-full px-4 py-2.5 bg-neutral-50 border border-neutral-200 rounded-xl text-neutral-900 text-sm focus:border-amber-400 focus:outline-none transition-colors cursor-pointer"
                   >
                     <option value="Educational Trips">Educational Trips (School / PU Excursion)</option>
                     <option value="Industry Visits (IV)">Industry Visits (IV - Engineering / Degree)</option>
@@ -346,14 +346,14 @@ Notes: ${formData.specialRequests || 'Please provide quotation and day-wise sche
               {/* Group Size & Dates */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-1.5">
-                  <label className="text-xs font-semibold uppercase tracking-wider text-neutral-400 flex items-center gap-1.5">
-                    <Users className="w-3.5 h-3.5 text-sky-400" />
+                  <label className="text-xs font-semibold uppercase tracking-wider text-neutral-600 flex items-center gap-1.5">
+                    <Users className="w-3.5 h-3.5 text-sky-600" />
                     <span>Traveler / Student Count</span>
                   </label>
                   <select
                     value={formData.travelers}
                     onChange={(e) => setFormData({ ...formData, travelers: Number(e.target.value) })}
-                    className="w-full px-4 py-2.5 bg-neutral-900 border border-neutral-800 rounded-xl text-neutral-100 text-sm focus:border-amber-400 focus:outline-none transition-colors cursor-pointer"
+                    className="w-full px-4 py-2.5 bg-neutral-50 border border-neutral-200 rounded-xl text-neutral-900 text-sm focus:border-amber-400 focus:outline-none transition-colors cursor-pointer"
                   >
                     {[15, 25, 35, 50, 75, 100, 150, 200].map((n) => (
                       <option key={n} value={n}>
@@ -364,8 +364,8 @@ Notes: ${formData.specialRequests || 'Please provide quotation and day-wise sche
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="text-xs font-semibold uppercase tracking-wider text-neutral-400 flex items-center gap-1.5">
-                    <Calendar className="w-3.5 h-3.5 text-amber-400" />
+                  <label className="text-xs font-semibold uppercase tracking-wider text-neutral-600 flex items-center gap-1.5">
+                    <Calendar className="w-3.5 h-3.5 text-amber-600" />
                     <span>Expected Month / Dates</span>
                   </label>
                   <input
@@ -373,14 +373,14 @@ Notes: ${formData.specialRequests || 'Please provide quotation and day-wise sche
                     placeholder="e.g. October 2026 / Mid-November"
                     value={formData.dates}
                     onChange={(e) => setFormData({ ...formData, dates: e.target.value })}
-                    className="w-full px-4 py-2.5 bg-neutral-900 border border-neutral-800 rounded-xl text-neutral-100 text-sm placeholder:text-neutral-600 focus:border-amber-400 focus:outline-none transition-colors"
+                    className="w-full px-4 py-2.5 bg-neutral-50 border border-neutral-200 rounded-xl text-neutral-900 text-sm placeholder:text-neutral-400 focus:border-amber-400 focus:outline-none transition-colors"
                   />
                 </div>
               </div>
 
               {/* Special Requests */}
               <div className="space-y-1.5">
-                <label className="text-xs font-semibold uppercase tracking-wider text-neutral-400">
+                <label className="text-xs font-semibold uppercase tracking-wider text-neutral-600">
                   Specific Requirements or Factory Preferences
                 </label>
                 <textarea
@@ -388,7 +388,7 @@ Notes: ${formData.specialRequests || 'Please provide quotation and day-wise sche
                   placeholder="Mention if you require KSIC silk or HAL factory permissions, Pure Veg / Jain catering, or faculty room requirements..."
                   value={formData.specialRequests}
                   onChange={(e) => setFormData({ ...formData, specialRequests: e.target.value })}
-                  className="w-full px-4 py-2.5 bg-neutral-900 border border-neutral-800 rounded-xl text-neutral-100 text-sm placeholder:text-neutral-600 focus:border-amber-400 focus:outline-none transition-colors resize-none"
+                  className="w-full px-4 py-2.5 bg-neutral-50 border border-neutral-200 rounded-xl text-neutral-900 text-sm placeholder:text-neutral-400 focus:border-amber-400 focus:outline-none transition-colors resize-none"
                 />
               </div>
 
@@ -401,7 +401,7 @@ Notes: ${formData.specialRequests || 'Please provide quotation and day-wise sche
                   <Send className="w-4 h-4" />
                   <span>Submit Tour Enquiry</span>
                 </button>
-                <div className="flex items-center justify-between text-[11px] text-neutral-400 mt-2 px-1">
+                <div className="flex items-center justify-between text-[11px] text-neutral-600 mt-2 px-1">
                   <span>Contact: {BUSINESS_CONFIG.contactPerson} ({BUSINESS_CONFIG.mobile1Formatted})</span>
                   <span>{BUSINESS_CONFIG.email}</span>
                 </div>

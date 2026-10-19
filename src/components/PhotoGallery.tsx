@@ -150,27 +150,27 @@ export const PhotoGallery: React.FC<PhotoGalleryProps> = ({ onOpenBooking }) => 
   };
 
   return (
-    <section id="gallery" className="py-20 lg:py-28 bg-black border-b border-neutral-900">
+    <section id="gallery" className="py-20 lg:py-28 bg-white border-b border-neutral-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         {/* Header with Editorial Hierarchy */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="space-y-3 max-w-2xl">
-            <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-cyan-400">
-              <Camera className="w-4 h-4 text-amber-400" />
+            <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-cyan-600">
+              <Camera className="w-4 h-4 text-amber-600" />
               <span>Real Expeditions in Action</span>
-              <span aria-hidden="true" className="text-neutral-700">·</span>
-              <span className="text-neutral-400 font-normal">Karnataka & South India</span>
+              <span aria-hidden="true" className="text-neutral-300">·</span>
+              <span className="text-neutral-600 font-normal">Karnataka & South India</span>
             </div>
-            <h2 className="font-serif-luxury text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight text-balance">
+            <h2 className="font-serif-luxury text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 tracking-tight text-balance">
               Recent Industrial Visits & Educational Tours.
             </h2>
-            <p className="text-neutral-400 text-base sm:text-lg font-light leading-relaxed">
+            <p className="text-neutral-600 text-base sm:text-lg font-light leading-relaxed">
               Explore photo highlights from recent batches managed by NREJ Travels. From technical factory floors to historic monolithic sanctuaries and student eco-camps.
             </p>
           </div>
 
           {/* Interactive Filter Control */}
-          <div className="flex flex-wrap items-center gap-1.5 p-1.5 bg-neutral-950 border border-neutral-800 rounded-xl">
+          <div className="flex flex-wrap items-center gap-1.5 p-1.5 bg-white border border-neutral-200 rounded-xl">
             {[
               { key: 'all' as const, label: 'All Recent Tours' },
               { key: 'industrial' as const, label: 'Industrial Visits (IV)' },
@@ -183,7 +183,7 @@ export const PhotoGallery: React.FC<PhotoGalleryProps> = ({ onOpenBooking }) => 
                 className={`px-3.5 py-1.5 text-xs font-medium rounded-lg transition-colors whitespace-nowrap cursor-pointer ${
                   activeCategory === tab.key
                     ? 'bg-amber-400 text-black shadow-sm font-semibold'
-                    : 'text-neutral-300 hover:text-white hover:bg-neutral-900'
+                    : 'text-neutral-700 hover:text-neutral-900 hover:bg-neutral-50'
                 }`}
               >
                 {tab.label}
@@ -200,32 +200,32 @@ export const PhotoGallery: React.FC<PhotoGalleryProps> = ({ onOpenBooking }) => 
               <div
                 key={item.id}
                 onClick={() => setSelectedItemIndex(actualIndex)}
-                className="group relative rounded-xl overflow-hidden bg-neutral-950 border border-neutral-900 hover:border-neutral-700 transition-all duration-300 cursor-pointer flex flex-col"
+                className="group relative rounded-xl overflow-hidden bg-white border border-neutral-50 hover:border-neutral-300 transition-all duration-300 cursor-pointer flex flex-col"
               >
                 {/* Media frame */}
-                <div className="relative aspect-[4/3] w-full overflow-hidden bg-black">
+                <div className="relative aspect-[4/3] w-full overflow-hidden bg-white">
                   <img
                     src={item.imageUrl}
                     alt={item.title}
                     referrerPolicy="no-referrer"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-85" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent opacity-85" />
 
                   {/* Category tag */}
-                  <div className="absolute top-3 left-3 flex items-center gap-1.5 px-2.5 py-1 rounded bg-black/85 backdrop-blur-sm border border-neutral-800 text-[11px] font-semibold">
+                  <div className="absolute top-3 left-3 flex items-center gap-1.5 px-2.5 py-1 rounded bg-white/85 backdrop-blur-sm border border-neutral-200 text-[11px] font-semibold">
                     {item.category === 'industrial' ? (
-                      <span className="flex items-center gap-1 text-cyan-400">
+                      <span className="flex items-center gap-1 text-cyan-600">
                         <Building2 className="w-3 h-3" />
                         {item.categoryLabel}
                       </span>
                     ) : item.category === 'educational' ? (
-                      <span className="flex items-center gap-1 text-amber-400">
+                      <span className="flex items-center gap-1 text-amber-600">
                         <GraduationCap className="w-3 h-3" />
                         {item.categoryLabel}
                       </span>
                     ) : (
-                      <span className="flex items-center gap-1 text-orange-400">
+                      <span className="flex items-center gap-1 text-orange-600">
                         <Flame className="w-3 h-3" />
                         {item.categoryLabel}
                       </span>
@@ -233,12 +233,12 @@ export const PhotoGallery: React.FC<PhotoGalleryProps> = ({ onOpenBooking }) => 
                   </div>
 
                   {/* Batch size tag over image */}
-                  <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between text-xs text-neutral-200">
+                  <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between text-xs text-neutral-800">
                     <span className="flex items-center gap-1.5 font-medium drop-shadow-sm truncate">
-                      <Users className="w-3.5 h-3.5 text-cyan-400" />
+                      <Users className="w-3.5 h-3.5 text-cyan-600" />
                       {item.batchSize}
                     </span>
-                    <span className="font-mono text-neutral-400 text-[11px] drop-shadow-sm shrink-0 ml-2">
+                    <span className="font-mono text-neutral-600 text-[11px] drop-shadow-sm shrink-0 ml-2">
                       {item.date}
                     </span>
                   </div>
@@ -247,25 +247,25 @@ export const PhotoGallery: React.FC<PhotoGalleryProps> = ({ onOpenBooking }) => 
                 {/* Content details */}
                 <div className="p-5 flex flex-col flex-grow space-y-3">
                   <div className="text-[11px] font-mono text-neutral-500 uppercase tracking-wider flex items-center gap-1.5">
-                    <MapPin className="w-3 h-3 text-amber-400" />
+                    <MapPin className="w-3 h-3 text-amber-600" />
                     <span className="truncate">{item.location}</span>
                   </div>
 
-                  <h3 className="font-serif-luxury text-lg font-bold text-white group-hover:text-amber-300 transition-colors leading-snug line-clamp-1">
+                  <h3 className="font-serif-luxury text-lg font-bold text-neutral-900 group-hover:text-amber-700 transition-colors leading-snug line-clamp-1">
                     {item.title}
                   </h3>
 
-                  <div className="text-xs text-cyan-300 font-medium">
+                  <div className="text-xs text-cyan-700 font-medium">
                     {item.institution}
                   </div>
 
-                  <p className="text-xs text-neutral-400 line-clamp-2 leading-relaxed">
+                  <p className="text-xs text-neutral-600 line-clamp-2 leading-relaxed">
                     {item.description}
                   </p>
 
-                  <div className="pt-3 mt-auto border-t border-neutral-900 flex items-center justify-between text-xs text-neutral-400">
+                  <div className="pt-3 mt-auto border-t border-neutral-50 flex items-center justify-between text-xs text-neutral-600">
                     <span className="text-[11px] text-neutral-500">Click to view details</span>
-                    <span className="text-amber-400 group-hover:translate-x-1 transition-transform flex items-center gap-1 font-semibold">
+                    <span className="text-amber-600 group-hover:translate-x-1 transition-transform flex items-center gap-1 font-semibold">
                       <span>Full Case</span>
                       <ArrowRight className="w-3.5 h-3.5" />
                     </span>
@@ -277,15 +277,15 @@ export const PhotoGallery: React.FC<PhotoGalleryProps> = ({ onOpenBooking }) => 
         </div>
 
         {/* Gallery Interactive Banner */}
-        <div className="p-6 sm:p-8 rounded-2xl bg-neutral-950 border border-neutral-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+        <div className="p-6 sm:p-8 rounded-2xl bg-white border border-neutral-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
           <div className="space-y-1">
-            <div className="text-xs font-mono uppercase tracking-wider text-sky-400 font-semibold">
+            <div className="text-xs font-mono uppercase tracking-wider text-sky-600 font-semibold">
               Planned for Schools, Colleges & Group Delegations
             </div>
-            <div className="font-serif-luxury text-xl font-bold text-white">
+            <div className="font-serif-luxury text-xl font-bold text-neutral-900">
               Want photos and custom itinerary blueprints for your department?
             </div>
-            <p className="text-xs sm:text-sm text-neutral-400 max-w-2xl leading-relaxed">
+            <p className="text-xs sm:text-sm text-neutral-600 max-w-2xl leading-relaxed">
               We provide college principals, department HODs, and school coordinators with detailed route logs, day-by-day plans, and itemized quotation proposals.
             </p>
           </div>
@@ -305,23 +305,23 @@ export const PhotoGallery: React.FC<PhotoGalleryProps> = ({ onOpenBooking }) => 
           onClick={() => setSelectedItemIndex(null)}
         >
           <div 
-            className="relative w-full max-w-4xl bg-neutral-950 border border-neutral-800 rounded-2xl shadow-2xl overflow-hidden my-auto max-h-[92vh] flex flex-col"
+            className="relative w-full max-w-4xl bg-white border border-neutral-200 rounded-2xl shadow-2xl overflow-hidden my-auto max-h-[92vh] flex flex-col"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Top Bar */}
-            <div className="p-5 border-b border-neutral-900 flex items-center justify-between gap-4 bg-black sticky top-0 z-10">
+            <div className="p-5 border-b border-neutral-50 flex items-center justify-between gap-4 bg-white sticky top-0 z-10">
               <div className="flex items-center gap-2">
-                <span className="text-xs font-mono uppercase tracking-wider text-cyan-400 font-semibold">
+                <span className="text-xs font-mono uppercase tracking-wider text-cyan-600 font-semibold">
                   {selectedItem.categoryLabel}
                 </span>
-                <span className="text-neutral-700">·</span>
-                <span className="text-xs text-neutral-400 font-medium">
+                <span className="text-neutral-300">·</span>
+                <span className="text-xs text-neutral-600 font-medium">
                   {selectedItem.location}
                 </span>
               </div>
               <button
                 onClick={() => setSelectedItemIndex(null)}
-                className="p-2 text-neutral-400 hover:text-white rounded-lg hover:bg-neutral-900 transition-colors cursor-pointer"
+                className="p-2 text-neutral-600 hover:text-neutral-900 rounded-lg hover:bg-neutral-50 transition-colors cursor-pointer"
                 aria-label="Close photo view"
               >
                 <X className="w-5 h-5" />
@@ -331,7 +331,7 @@ export const PhotoGallery: React.FC<PhotoGalleryProps> = ({ onOpenBooking }) => 
             {/* Modal Scrollable Body */}
             <div className="p-6 overflow-y-auto space-y-6">
               {/* High-res image display with navigation buttons */}
-              <div className="relative aspect-[16/9] w-full rounded-xl overflow-hidden bg-black border border-neutral-900 group">
+              <div className="relative aspect-[16/9] w-full rounded-xl overflow-hidden bg-white border border-neutral-50 group">
                 <img
                   src={selectedItem.imageUrl}
                   alt={selectedItem.title}
@@ -342,14 +342,14 @@ export const PhotoGallery: React.FC<PhotoGalleryProps> = ({ onOpenBooking }) => 
                 {/* Left/Right Carousel Controls */}
                 <button
                   onClick={handlePrev}
-                  className="absolute left-3 top-1/2 -translate-y-1/2 p-2.5 rounded-full bg-black/80 text-white hover:bg-black border border-neutral-800 transition-colors cursor-pointer"
+                  className="absolute left-3 top-1/2 -translate-y-1/2 p-2.5 rounded-full bg-white/80 text-neutral-900 hover:bg-white border border-neutral-200 transition-colors cursor-pointer"
                   aria-label="Previous photo"
                 >
                   <ChevronLeft className="w-5 h-5" />
                 </button>
                 <button
                   onClick={handleNext}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 p-2.5 rounded-full bg-black/80 text-white hover:bg-black border border-neutral-800 transition-colors cursor-pointer"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 p-2.5 rounded-full bg-white/80 text-neutral-900 hover:bg-white border border-neutral-200 transition-colors cursor-pointer"
                   aria-label="Next photo"
                 >
                   <ChevronRight className="w-5 h-5" />
@@ -358,33 +358,33 @@ export const PhotoGallery: React.FC<PhotoGalleryProps> = ({ onOpenBooking }) => 
 
               {/* Information & Case Dossier */}
               <div className="space-y-4">
-                <div className="flex flex-wrap items-center justify-between gap-2 border-b border-neutral-900 pb-3">
+                <div className="flex flex-wrap items-center justify-between gap-2 border-b border-neutral-50 pb-3">
                   <div>
-                    <h3 className="font-serif-luxury text-2xl font-bold text-white">
+                    <h3 className="font-serif-luxury text-2xl font-bold text-neutral-900">
                       {selectedItem.title}
                     </h3>
-                    <div className="text-sm font-semibold text-cyan-300 mt-0.5">
+                    <div className="text-sm font-semibold text-cyan-700 mt-0.5">
                       {selectedItem.institution}
                     </div>
                   </div>
-                  <div className="text-right text-xs text-neutral-400">
-                    <div className="font-semibold text-white">{selectedItem.batchSize}</div>
+                  <div className="text-right text-xs text-neutral-600">
+                    <div className="font-semibold text-neutral-900">{selectedItem.batchSize}</div>
                     <div className="font-mono text-neutral-500">{selectedItem.date}</div>
                   </div>
                 </div>
 
-                <p className="text-sm text-neutral-300 leading-relaxed">
+                <p className="text-sm text-neutral-700 leading-relaxed">
                   {selectedItem.description}
                 </p>
 
                 <div className="space-y-2 pt-2">
-                  <div className="text-xs font-semibold uppercase tracking-wider text-neutral-400">
+                  <div className="text-xs font-semibold uppercase tracking-wider text-neutral-600">
                     Key Outcomes & Inclusions Handled by NREJ:
                   </div>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-neutral-300">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-neutral-700">
                     {selectedItem.takeaways.map((point, i) => (
-                      <div key={i} className="flex items-start gap-2 p-2.5 rounded-lg bg-black border border-neutral-900">
-                        <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                      <div key={i} className="flex items-start gap-2 p-2.5 rounded-lg bg-white border border-neutral-50">
+                        <CheckCircle2 className="w-4 h-4 text-cyan-600 shrink-0 mt-0.5" />
                         <span>{point}</span>
                       </div>
                     ))}
@@ -394,14 +394,14 @@ export const PhotoGallery: React.FC<PhotoGalleryProps> = ({ onOpenBooking }) => 
             </div>
 
             {/* Modal Bottom CTA */}
-            <div className="p-5 border-t border-neutral-900 bg-black flex flex-col sm:flex-row items-center justify-between gap-4">
-              <div className="text-xs text-neutral-400">
+            <div className="p-5 border-t border-neutral-50 bg-white flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div className="text-xs text-neutral-600">
                 Want this exact circuit for your department or class?
               </div>
               <div className="flex items-center gap-3 w-full sm:w-auto">
                 <button
                   onClick={() => setSelectedItemIndex(null)}
-                  className="flex-1 sm:flex-none px-4 py-2.5 text-xs font-medium text-neutral-300 hover:text-white rounded-lg border border-neutral-800 transition-colors"
+                  className="flex-1 sm:flex-none px-4 py-2.5 text-xs font-medium text-neutral-700 hover:text-neutral-900 rounded-lg border border-neutral-200 transition-colors"
                 >
                   Close
                 </button>

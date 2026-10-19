@@ -64,20 +64,20 @@ export const CustomTripBuilder: React.FC<CustomTripBuilderProps> = ({ onRequestQ
   };
 
   return (
-    <section id="builder" className="py-20 lg:py-28 bg-neutral-950 border-b border-neutral-900">
+    <section id="builder" className="py-20 lg:py-28 bg-white border-b border-neutral-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
-          <div className="flex items-center justify-center gap-2 text-xs font-semibold uppercase tracking-widest text-amber-400">
-            <Sliders className="w-4 h-4 text-cyan-400" />
+          <div className="flex items-center justify-center gap-2 text-xs font-semibold uppercase tracking-widest text-amber-600">
+            <Sliders className="w-4 h-4 text-cyan-600" />
             <span>Karnataka & South India Trip Studio</span>
-            <span aria-hidden="true" className="text-neutral-700">·</span>
-            <span className="text-neutral-400 font-normal">Real-Time Estimator</span>
+            <span aria-hidden="true" className="text-neutral-300">·</span>
+            <span className="text-neutral-600 font-normal">Real-Time Estimator</span>
           </div>
-          <h2 className="font-serif-luxury text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight text-balance">
+          <h2 className="font-serif-luxury text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 tracking-tight text-balance">
             Customize college IVs, educational study tours, or family circuits.
           </h2>
-          <p className="text-neutral-400 text-base sm:text-lg font-light leading-relaxed">
+          <p className="text-neutral-600 text-base sm:text-lg font-light leading-relaxed">
             Configure group size, luxury coach requirements, official industrial plant clearances, and accommodation tiers with real-time transparent costing in Indian Rupees (₹).
           </p>
         </div>
@@ -85,11 +85,11 @@ export const CustomTripBuilder: React.FC<CustomTripBuilderProps> = ({ onRequestQ
         {/* Studio Interactive Card */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Controls Column */}
-          <div className="lg:col-span-7 bg-black border border-neutral-900 rounded-2xl p-6 sm:p-8 space-y-8">
+          <div className="lg:col-span-7 bg-white border border-neutral-50 rounded-2xl p-6 sm:p-8 space-y-8">
             {/* Step 1: Trip Type & Format */}
             <div className="space-y-3">
-              <label className="text-xs font-semibold uppercase tracking-wider text-neutral-400 flex items-center gap-1.5">
-                <Building2 className="w-3.5 h-3.5 text-cyan-400" />
+              <label className="text-xs font-semibold uppercase tracking-wider text-neutral-600 flex items-center gap-1.5">
+                <Building2 className="w-3.5 h-3.5 text-cyan-600" />
                 <span>01. Select Travel Purpose</span>
               </label>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
@@ -107,8 +107,8 @@ export const CustomTripBuilder: React.FC<CustomTripBuilderProps> = ({ onRequestQ
                     onClick={() => setConfig({ ...config, tripType: type as TripType })}
                     className={`px-3 py-2.5 text-xs font-medium rounded-lg border text-left transition-colors cursor-pointer ${
                       config.tripType === type
-                        ? 'border-cyan-400 bg-cyan-950/40 text-cyan-300 font-semibold'
-                        : 'border-neutral-900 bg-neutral-950 text-neutral-400 hover:text-white hover:border-neutral-800'
+                        ? 'border-cyan-400 bg-cyan-50 text-cyan-700 font-semibold'
+                        : 'border-neutral-50 bg-white text-neutral-600 hover:text-neutral-900 hover:border-neutral-200'
                     }`}
                   >
                     {type}
@@ -119,13 +119,13 @@ export const CustomTripBuilder: React.FC<CustomTripBuilderProps> = ({ onRequestQ
 
             {/* Step 2: Destination Selection */}
             <div className="space-y-3">
-              <label className="text-xs font-semibold uppercase tracking-wider text-neutral-400 flex items-center gap-1.5">
+              <label className="text-xs font-semibold uppercase tracking-wider text-neutral-600 flex items-center gap-1.5">
                 <span>02. Select Karnataka / South India Circuit</span>
               </label>
               <select
                 value={config.destinationId}
                 onChange={(e) => setConfig({ ...config, destinationId: e.target.value })}
-                className="w-full px-4 py-3 bg-neutral-950 border border-neutral-800 rounded-xl text-neutral-100 font-medium focus:border-amber-400 focus:outline-none transition-colors cursor-pointer"
+                className="w-full px-4 py-3 bg-white border border-neutral-200 rounded-xl text-neutral-900 font-medium focus:border-amber-400 focus:outline-none transition-colors cursor-pointer"
               >
                 {DESTINATIONS.map((d) => (
                   <option key={d.id} value={d.id}>
@@ -139,8 +139,8 @@ export const CustomTripBuilder: React.FC<CustomTripBuilderProps> = ({ onRequestQ
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div className="space-y-2">
                 <div className="flex justify-between items-center text-xs">
-                  <span className="font-semibold uppercase tracking-wider text-neutral-400">03. Duration</span>
-                  <span className="font-bold text-amber-400 tabular-nums">{config.durationDays} Days / {config.durationDays - 1} Nights</span>
+                  <span className="font-semibold uppercase tracking-wider text-neutral-600">03. Duration</span>
+                  <span className="font-bold text-amber-600 tabular-nums">{config.durationDays} Days / {config.durationDays - 1} Nights</span>
                 </div>
                 <input
                   type="range"
@@ -149,7 +149,7 @@ export const CustomTripBuilder: React.FC<CustomTripBuilderProps> = ({ onRequestQ
                   step="1"
                   value={config.durationDays}
                   onChange={(e) => setConfig({ ...config, durationDays: Number(e.target.value) })}
-                  className="w-full accent-amber-400 bg-neutral-900 rounded-lg h-2 cursor-pointer"
+                  className="w-full accent-amber-400 bg-neutral-50 rounded-lg h-2 cursor-pointer"
                 />
                 <div className="flex justify-between text-[11px] text-neutral-500 font-mono">
                   <span>2 Days (IV)</span>
@@ -160,10 +160,10 @@ export const CustomTripBuilder: React.FC<CustomTripBuilderProps> = ({ onRequestQ
 
               <div className="space-y-2">
                 <div className="flex justify-between items-center text-xs">
-                  <span className="font-semibold uppercase tracking-wider text-neutral-400">04. Group / Batch Size</span>
-                  <span className="font-bold text-cyan-400 tabular-nums">{config.guestsCount} Travelers</span>
+                  <span className="font-semibold uppercase tracking-wider text-neutral-600">04. Group / Batch Size</span>
+                  <span className="font-bold text-cyan-600 tabular-nums">{config.guestsCount} Travelers</span>
                 </div>
-                <div className="flex items-center gap-1.5 p-1 bg-neutral-950 border border-neutral-900 rounded-lg">
+                <div className="flex items-center gap-1.5 p-1 bg-white border border-neutral-50 rounded-lg">
                   {[15, 30, 50, 100, 150].map((num) => (
                     <button
                       key={num}
@@ -172,7 +172,7 @@ export const CustomTripBuilder: React.FC<CustomTripBuilderProps> = ({ onRequestQ
                       className={`flex-1 py-1.5 text-xs font-semibold rounded-md transition-colors cursor-pointer ${
                         config.guestsCount === num
                           ? 'bg-cyan-400 text-black shadow-sm font-bold'
-                          : 'text-neutral-400 hover:text-white'
+                          : 'text-neutral-600 hover:text-neutral-900'
                       }`}
                     >
                       {num === 50 ? '50 (1 Bus)' : num === 100 ? '100 (2 Bus)' : num === 150 ? '150+' : num}
@@ -184,7 +184,7 @@ export const CustomTripBuilder: React.FC<CustomTripBuilderProps> = ({ onRequestQ
 
             {/* Step 4: Transport & Accommodation Tier */}
             <div className="space-y-3">
-              <label className="text-xs font-semibold uppercase tracking-wider text-neutral-400">
+              <label className="text-xs font-semibold uppercase tracking-wider text-neutral-600">
                 05. Accommodation & Transport Standard
               </label>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
@@ -209,11 +209,11 @@ export const CustomTripBuilder: React.FC<CustomTripBuilderProps> = ({ onRequestQ
                     className={`p-3.5 rounded-xl border text-left transition-all cursor-pointer ${
                       config.tier === tierItem.name
                         ? 'border-amber-400 bg-amber-400/10'
-                        : 'border-neutral-900 bg-neutral-950/80 hover:border-neutral-800'
+                        : 'border-neutral-50 bg-white/80 hover:border-neutral-200'
                     }`}
                   >
-                    <div className="text-xs font-bold text-white">{tierItem.name}</div>
-                    <div className="text-[11px] text-neutral-400 mt-1 leading-relaxed">
+                    <div className="text-xs font-bold text-neutral-900">{tierItem.name}</div>
+                    <div className="text-[11px] text-neutral-600 mt-1 leading-relaxed">
                       {tierItem.desc}
                     </div>
                   </button>
@@ -223,7 +223,7 @@ export const CustomTripBuilder: React.FC<CustomTripBuilderProps> = ({ onRequestQ
 
             {/* Step 5: Institutional & Group Add-Ons */}
             <div className="space-y-3">
-              <label className="text-xs font-semibold uppercase tracking-wider text-neutral-400">
+              <label className="text-xs font-semibold uppercase tracking-wider text-neutral-600">
                 06. Industrial Visit & Educational Add-Ons
               </label>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
@@ -241,21 +241,21 @@ export const CustomTripBuilder: React.FC<CustomTripBuilderProps> = ({ onRequestQ
                       onClick={() => toggleAddOn(item.key)}
                       className={`flex items-center justify-between p-3 rounded-lg border cursor-pointer transition-colors ${
                         checked
-                          ? 'border-cyan-500/80 bg-neutral-950 text-white'
-                          : 'border-neutral-900 bg-neutral-950/40 text-neutral-500 hover:text-neutral-300'
+                          ? 'border-cyan-500/80 bg-white text-neutral-900'
+                          : 'border-neutral-50 bg-white/40 text-neutral-500 hover:text-neutral-700'
                       }`}
                     >
                       <div className="flex items-center gap-2.5">
                         <div
                           className={`w-4 h-4 rounded flex items-center justify-center text-xs ${
-                            checked ? 'bg-cyan-400 text-black' : 'border border-neutral-800'
+                            checked ? 'bg-cyan-400 text-black' : 'border border-neutral-200'
                           }`}
                         >
                           {checked && <Check className="w-3 h-3 stroke-[3]" />}
                         </div>
                         <span className="text-xs font-medium">{item.label}</span>
                       </div>
-                      <span className="text-xs font-mono text-cyan-400/90">{item.fee}</span>
+                      <span className="text-xs font-mono text-cyan-600/90">{item.fee}</span>
                     </div>
                   );
                 })}
@@ -264,51 +264,51 @@ export const CustomTripBuilder: React.FC<CustomTripBuilderProps> = ({ onRequestQ
           </div>
 
           {/* Real-time Summary Card Column */}
-          <div className="lg:col-span-5 bg-black border border-neutral-900 rounded-2xl p-6 sm:p-8 space-y-6 sticky top-24">
-            <div className="space-y-1 pb-4 border-b border-neutral-900">
-              <span className="text-xs font-mono uppercase tracking-wider text-cyan-400 font-semibold flex items-center gap-1.5">
+          <div className="lg:col-span-5 bg-white border border-neutral-50 rounded-2xl p-6 sm:p-8 space-y-6 sticky top-24">
+            <div className="space-y-1 pb-4 border-b border-neutral-50">
+              <span className="text-xs font-mono uppercase tracking-wider text-cyan-600 font-semibold flex items-center gap-1.5">
                 <Bus className="w-3.5 h-3.5" />
                 South India Custom Tour Proposal
               </span>
-              <h3 className="font-serif-luxury text-2xl font-bold text-white">
+              <h3 className="font-serif-luxury text-2xl font-bold text-neutral-900">
                 {selectedDestination.title}
               </h3>
-              <p className="text-xs text-neutral-400">
+              <p className="text-xs text-neutral-600">
                 {config.durationDays} Days · {config.tripType} · {config.tier}
               </p>
             </div>
 
             {/* Inclusions Breakdown */}
             <div className="space-y-3 text-xs">
-              <div className="font-semibold text-neutral-300 uppercase tracking-wider text-[11px]">
+              <div className="font-semibold text-neutral-700 uppercase tracking-wider text-[11px]">
                 Standard Package Inclusions:
               </div>
-              <ul className="space-y-2 text-neutral-400">
+              <ul className="space-y-2 text-neutral-600">
                 <li className="flex items-center gap-2">
-                  <Check className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+                  <Check className="w-3.5 h-3.5 text-cyan-600 shrink-0" />
                   <span>{config.durationDays} nights verified hotel/resort stay with separate security</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <Check className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+                  <Check className="w-3.5 h-3.5 text-cyan-600 shrink-0" />
                   <span>All buffet meals: hygienic breakfast, lunch, and dinner (Pure Veg/Jain/Non-veg)</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <Check className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+                  <Check className="w-3.5 h-3.5 text-cyan-600 shrink-0" />
                   <span>Pushback AC Tourist Coach with experienced hill/highway drivers</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <Check className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+                  <Check className="w-3.5 h-3.5 text-cyan-600 shrink-0" />
                   <span>Dedicated NREJ tour manager traveling with the group 24/7</span>
                 </li>
                 {config.addOns.factoryVisitPermissions && (
-                  <li className="flex items-center gap-2 text-cyan-300">
-                    <Check className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+                  <li className="flex items-center gap-2 text-cyan-700">
+                    <Check className="w-3.5 h-3.5 text-cyan-600 shrink-0" />
                     <span>Included: Official factory entry clearances & permission liaison</span>
                   </li>
                 )}
                 {config.addOns.industrialCertificate && (
-                  <li className="flex items-center gap-2 text-cyan-300">
-                    <Check className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+                  <li className="flex items-center gap-2 text-cyan-700">
+                    <Check className="w-3.5 h-3.5 text-cyan-600 shrink-0" />
                     <span>Included: Authorized IV attendance certificates for all students</span>
                   </li>
                 )}
@@ -316,25 +316,25 @@ export const CustomTripBuilder: React.FC<CustomTripBuilderProps> = ({ onRequestQ
             </div>
 
             {/* Price Calculations in INR */}
-            <div className="p-4 rounded-xl bg-neutral-950 border border-neutral-900 space-y-3">
-              <div className="flex justify-between text-xs text-neutral-400">
+            <div className="p-4 rounded-xl bg-white border border-neutral-50 space-y-3">
+              <div className="flex justify-between text-xs text-neutral-600">
                 <span>Estimated per student/passenger:</span>
-                <span className="font-semibold text-white font-mono tabular-nums">
+                <span className="font-semibold text-neutral-900 font-mono tabular-nums">
                   ₹{calculatedEstimateInr.toLocaleString('en-IN')} INR
                 </span>
               </div>
-              <div className="flex justify-between text-xs text-neutral-400">
+              <div className="flex justify-between text-xs text-neutral-600">
                 <span>Batch capacity:</span>
-                <span className="font-medium text-white tabular-nums">
+                <span className="font-medium text-neutral-900 tabular-nums">
                   × {config.guestsCount} Students / Guests
                 </span>
               </div>
-              <div className="pt-2 border-t border-neutral-900 flex justify-between items-baseline">
+              <div className="pt-2 border-t border-neutral-50 flex justify-between items-baseline">
                 <div>
-                  <div className="text-[11px] uppercase tracking-wider text-neutral-400 font-medium">Total Batch Quotation</div>
+                  <div className="text-[11px] uppercase tracking-wider text-neutral-600 font-medium">Total Batch Quotation</div>
                   <div className="text-xs text-neutral-500">Tolls, parking, GST & permits included</div>
                 </div>
-                <div className="text-2xl font-bold text-amber-400 font-mono tabular-nums">
+                <div className="text-2xl font-bold text-amber-600 font-mono tabular-nums">
                   ₹{totalTripCostInr.toLocaleString('en-IN')}
                 </div>
               </div>
@@ -351,7 +351,7 @@ export const CustomTripBuilder: React.FC<CustomTripBuilderProps> = ({ onRequestQ
                 <ArrowRight className="w-4 h-4" />
               </button>
               <div className="flex items-center justify-center gap-2 text-xs text-neutral-500">
-                <Shield className="w-3.5 h-3.5 text-cyan-400" />
+                <Shield className="w-3.5 h-3.5 text-cyan-600" />
                 <span>GST Tax Invoice provided for college accounts clearance</span>
               </div>
             </div>

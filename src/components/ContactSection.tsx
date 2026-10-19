@@ -99,20 +99,20 @@ Notes: ${form.message || 'Please send complete quotation & itinerary.'}`;
   };
 
   return (
-    <section id="contact" className="py-20 lg:py-28 bg-neutral-950 border-b border-neutral-900">
+    <section id="contact" className="py-20 lg:py-28 bg-white border-b border-neutral-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
         {/* Section Header */}
         <div className="max-w-3xl space-y-3">
-          <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-sky-400">
-            <Mail className="w-4 h-4 text-amber-400" />
+          <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-sky-600">
+            <Mail className="w-4 h-4 text-amber-600" />
             <span>Contact & Tour Enquiries</span>
-            <span aria-hidden="true" className="text-neutral-700">·</span>
-            <span className="text-neutral-400 font-normal">NRej Travelling Agency</span>
+            <span aria-hidden="true" className="text-neutral-300">·</span>
+            <span className="text-neutral-600 font-normal">NRej Travelling Agency</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-neutral-900 tracking-tight leading-tight">
             Connect with Us to Plan Your Journey
           </h2>
-          <p className="text-neutral-300 text-base sm:text-lg leading-relaxed">
+          <p className="text-neutral-700 text-base sm:text-lg leading-relaxed">
             Reach out to discuss your institution's educational tour, college industrial visit, or Karnataka special holiday. We provide itemized quotations and tailored itineraries.
           </p>
         </div>
@@ -121,37 +121,37 @@ Notes: ${form.message || 'Please send complete quotation & itinerary.'}`;
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           {/* Left Column: Official Business Cards & Direct Actions */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="p-7 rounded-2xl bg-neutral-900 border border-neutral-800 space-y-6">
+            <div className="p-7 rounded-2xl bg-neutral-50 border border-neutral-200 space-y-6">
               <div className="space-y-1">
-                <div className="text-xs font-semibold uppercase tracking-wider text-amber-400">
+                <div className="text-xs font-semibold uppercase tracking-wider text-amber-600">
                   Official Contact Information
                 </div>
-                <h3 className="text-2xl font-bold text-white">
+                <h3 className="text-2xl font-bold text-neutral-900">
                   {BUSINESS_CONFIG.businessName}
                 </h3>
-                <div className="text-xs text-sky-400 font-medium">
+                <div className="text-xs text-sky-600 font-medium">
                   {BUSINESS_CONFIG.tagline}
                 </div>
               </div>
 
-              <div className="space-y-4 pt-2 border-t border-neutral-800 text-sm text-neutral-300">
+              <div className="space-y-4 pt-2 border-t border-neutral-200 text-sm text-neutral-700">
                 {/* Contact Person */}
                 <div className="flex items-start gap-3">
-                  <User className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
+                  <User className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
                   <div>
-                    <div className="text-[11px] text-neutral-400 uppercase font-mono">Contact Person</div>
-                    <div className="font-semibold text-white">{BUSINESS_CONFIG.contactPerson}</div>
+                    <div className="text-[11px] text-neutral-600 uppercase font-mono">Contact Person</div>
+                    <div className="font-semibold text-neutral-900">{BUSINESS_CONFIG.contactPerson}</div>
                   </div>
                 </div>
 
                 {/* Primary Phone */}
                 <div className="flex items-start gap-3">
-                  <Phone className="w-5 h-5 text-sky-400 shrink-0 mt-0.5" />
+                  <Phone className="w-5 h-5 text-sky-600 shrink-0 mt-0.5" />
                   <div>
-                    <div className="text-[11px] text-neutral-400 uppercase font-mono">Mobile Number 1</div>
+                    <div className="text-[11px] text-neutral-600 uppercase font-mono">Mobile Number 1</div>
                     <a
                       href={`tel:${BUSINESS_CONFIG.mobile1}`}
-                      className="font-semibold text-white hover:text-sky-300 transition-colors"
+                      className="font-semibold text-neutral-900 hover:text-sky-700 transition-colors"
                     >
                       {BUSINESS_CONFIG.mobile1Formatted}
                     </a>
@@ -160,12 +160,12 @@ Notes: ${form.message || 'Please send complete quotation & itinerary.'}`;
 
                 {/* Secondary Phone */}
                 <div className="flex items-start gap-3">
-                  <Phone className="w-5 h-5 text-sky-400 shrink-0 mt-0.5" />
+                  <Phone className="w-5 h-5 text-sky-600 shrink-0 mt-0.5" />
                   <div>
-                    <div className="text-[11px] text-neutral-400 uppercase font-mono">Mobile Number 2</div>
+                    <div className="text-[11px] text-neutral-600 uppercase font-mono">Mobile Number 2</div>
                     <a
                       href={`tel:${BUSINESS_CONFIG.mobile2}`}
-                      className="font-semibold text-white hover:text-sky-300 transition-colors"
+                      className="font-semibold text-neutral-900 hover:text-sky-700 transition-colors"
                     >
                       {BUSINESS_CONFIG.mobile2Formatted}
                     </a>
@@ -174,12 +174,12 @@ Notes: ${form.message || 'Please send complete quotation & itinerary.'}`;
 
                 {/* Official Email */}
                 <div className="flex items-start gap-3">
-                  <Mail className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
+                  <Mail className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
                   <div>
-                    <div className="text-[11px] text-neutral-400 uppercase font-mono">Email Address</div>
+                    <div className="text-[11px] text-neutral-600 uppercase font-mono">Email Address</div>
                     <a
                       href={`mailto:${BUSINESS_CONFIG.email}`}
-                      className="font-semibold text-white hover:text-amber-300 transition-colors"
+                      className="font-semibold text-neutral-900 hover:text-amber-700 transition-colors"
                     >
                       {BUSINESS_CONFIG.email}
                     </a>
@@ -188,16 +188,16 @@ Notes: ${form.message || 'Please send complete quotation & itinerary.'}`;
 
                 {/* Location */}
                 <div className="flex items-start gap-3">
-                  <MapPin className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
+                  <MapPin className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
                   <div>
-                    <div className="text-[11px] text-neutral-400 uppercase font-mono">Office Location</div>
-                    <div className="font-medium text-white">{BUSINESS_CONFIG.location.fullAddress}</div>
+                    <div className="text-[11px] text-neutral-600 uppercase font-mono">Office Location</div>
+                    <div className="font-medium text-neutral-900">{BUSINESS_CONFIG.location.fullAddress}</div>
                   </div>
                 </div>
               </div>
 
               {/* Direct WhatsApp Callout */}
-              <div className="pt-4 border-t border-neutral-800 space-y-2">
+              <div className="pt-4 border-t border-neutral-200 space-y-2">
                 <a
                   href={getWhatsAppInquiryUrl()}
                   target="_blank"
@@ -214,12 +214,12 @@ Notes: ${form.message || 'Please send complete quotation & itinerary.'}`;
             </div>
 
             {/* Educational Institution Notice Card */}
-            <div className="p-5 rounded-xl bg-neutral-900/60 border border-neutral-800 text-xs text-neutral-300 space-y-2">
-              <div className="font-semibold text-sky-400 flex items-center gap-1.5">
+            <div className="p-5 rounded-xl bg-neutral-50/60 border border-neutral-200 text-xs text-neutral-700 space-y-2">
+              <div className="font-semibold text-sky-600 flex items-center gap-1.5">
                 <Building2 className="w-4 h-4" />
                 <span>Notice for College Principals & HODs</span>
               </div>
-              <p className="text-neutral-400 leading-relaxed">
+              <p className="text-neutral-600 leading-relaxed">
                 If your institution requires official quotations on agency letterhead, custom route plans for governing council approval, or driver credential copies in advance, please specify in the enquiry form or call H. Ramesh directly.
               </p>
             </div>
@@ -227,29 +227,29 @@ Notes: ${form.message || 'Please send complete quotation & itinerary.'}`;
 
           {/* Right Column: Validated Enquiry Form */}
           <div className="lg:col-span-7">
-            <div className="p-8 sm:p-10 rounded-2xl bg-neutral-900 border border-neutral-800 shadow-2xl relative">
+            <div className="p-8 sm:p-10 rounded-2xl bg-neutral-50 border border-neutral-200 shadow-2xl relative">
               {isSubmitted ? (
                 /* Success State */
                 <div className="space-y-6 py-6 text-center">
-                  <div className="w-16 h-16 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 flex items-center justify-center mx-auto">
+                  <div className="w-16 h-16 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-600 flex items-center justify-center mx-auto">
                     <CheckCircle2 className="w-8 h-8" />
                   </div>
 
                   <div className="space-y-2">
-                    <div className="text-xs font-mono uppercase tracking-wider text-sky-400">
+                    <div className="text-xs font-mono uppercase tracking-wider text-sky-600">
                       Reference #{referenceId}
                     </div>
-                    <h3 className="text-2xl sm:text-3xl font-bold text-white">
+                    <h3 className="text-2xl sm:text-3xl font-bold text-neutral-900">
                       Enquiry Submitted Successfully
                     </h3>
-                    <p className="text-sm text-neutral-300 max-w-md mx-auto leading-relaxed">
-                      Thank you, <strong className="text-white">{form.fullName}</strong>. Your enquiry for <strong className="text-amber-400">{form.institutionName}</strong> has been logged. Contact person <strong className="text-white">{BUSINESS_CONFIG.contactPerson}</strong> will get in touch with you shortly.
+                    <p className="text-sm text-neutral-700 max-w-md mx-auto leading-relaxed">
+                      Thank you, <strong className="text-neutral-900">{form.fullName}</strong>. Your enquiry for <strong className="text-amber-600">{form.institutionName}</strong> has been logged. Contact person <strong className="text-neutral-900">{BUSINESS_CONFIG.contactPerson}</strong> will get in touch with you shortly.
                     </p>
                   </div>
 
                   {/* Immediate WhatsApp Forwarding Option */}
-                  <div className="p-4 rounded-xl bg-neutral-950 border border-neutral-800 max-w-md mx-auto space-y-3">
-                    <div className="text-xs text-neutral-300">
+                  <div className="p-4 rounded-xl bg-white border border-neutral-200 max-w-md mx-auto space-y-3">
+                    <div className="text-xs text-neutral-700">
                       Want an instant reply? Send your reference directly via WhatsApp:
                     </div>
                     <a
@@ -267,7 +267,7 @@ Notes: ${form.message || 'Please send complete quotation & itinerary.'}`;
                     <button
                       type="button"
                       onClick={resetForm}
-                      className="px-5 py-2.5 text-xs font-medium text-neutral-300 hover:text-white rounded-lg border border-neutral-800 transition-colors"
+                      className="px-5 py-2.5 text-xs font-medium text-neutral-700 hover:text-neutral-900 rounded-lg border border-neutral-200 transition-colors"
                     >
                       Submit Another Enquiry
                     </button>
@@ -284,10 +284,10 @@ Notes: ${form.message || 'Please send complete quotation & itinerary.'}`;
                 /* Active Form */
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-white">
+                    <h3 className="text-xl sm:text-2xl font-bold text-neutral-900">
                       Request Tour Quotation & Itinerary
                     </h3>
-                    <p className="text-xs sm:text-sm text-neutral-400 mt-1">
+                    <p className="text-xs sm:text-sm text-neutral-600 mt-1">
                       Fill out this form to receive a detailed schedule and customized pricing for your school, college, or group.
                     </p>
                   </div>
@@ -296,7 +296,7 @@ Notes: ${form.message || 'Please send complete quotation & itinerary.'}`;
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {/* Full Name */}
                     <div className="space-y-1.5">
-                      <label className="text-xs font-medium text-neutral-300 flex items-center justify-between">
+                      <label className="text-xs font-medium text-neutral-700 flex items-center justify-between">
                         <span>Your Full Name *</span>
                       </label>
                       <input
@@ -307,12 +307,12 @@ Notes: ${form.message || 'Please send complete quotation & itinerary.'}`;
                           setForm({ ...form, fullName: e.target.value });
                           if (errors.fullName) setErrors({ ...errors, fullName: undefined });
                         }}
-                        className={`w-full px-3.5 py-2.5 text-xs bg-neutral-950 border rounded-lg text-white placeholder:text-neutral-600 focus:outline-none transition-colors ${
-                          errors.fullName ? 'border-red-500 focus:border-red-500' : 'border-neutral-800 focus:border-sky-400'
+                        className={`w-full px-3.5 py-2.5 text-xs bg-white border rounded-lg text-neutral-900 placeholder:text-neutral-400 focus:outline-none transition-colors ${
+                          errors.fullName ? 'border-red-500 focus:border-red-500' : 'border-neutral-200 focus:border-sky-400'
                         }`}
                       />
                       {errors.fullName && (
-                        <div className="text-[11px] text-red-400 flex items-center gap-1">
+                        <div className="text-[11px] text-red-600 flex items-center gap-1">
                           <AlertCircle className="w-3 h-3" />
                           <span>{errors.fullName}</span>
                         </div>
@@ -321,7 +321,7 @@ Notes: ${form.message || 'Please send complete quotation & itinerary.'}`;
 
                     {/* Institution Name */}
                     <div className="space-y-1.5">
-                      <label className="text-xs font-medium text-neutral-300 flex items-center justify-between">
+                      <label className="text-xs font-medium text-neutral-700 flex items-center justify-between">
                         <span>Institution / College / School *</span>
                       </label>
                       <input
@@ -332,12 +332,12 @@ Notes: ${form.message || 'Please send complete quotation & itinerary.'}`;
                           setForm({ ...form, institutionName: e.target.value });
                           if (errors.institutionName) setErrors({ ...errors, institutionName: undefined });
                         }}
-                        className={`w-full px-3.5 py-2.5 text-xs bg-neutral-950 border rounded-lg text-white placeholder:text-neutral-600 focus:outline-none transition-colors ${
-                          errors.institutionName ? 'border-red-500 focus:border-red-500' : 'border-neutral-800 focus:border-sky-400'
+                        className={`w-full px-3.5 py-2.5 text-xs bg-white border rounded-lg text-neutral-900 placeholder:text-neutral-400 focus:outline-none transition-colors ${
+                          errors.institutionName ? 'border-red-500 focus:border-red-500' : 'border-neutral-200 focus:border-sky-400'
                         }`}
                       />
                       {errors.institutionName && (
-                        <div className="text-[11px] text-red-400 flex items-center gap-1">
+                        <div className="text-[11px] text-red-600 flex items-center gap-1">
                           <AlertCircle className="w-3 h-3" />
                           <span>{errors.institutionName}</span>
                         </div>
@@ -346,13 +346,13 @@ Notes: ${form.message || 'Please send complete quotation & itinerary.'}`;
 
                     {/* Designation / Role */}
                     <div className="space-y-1.5">
-                      <label className="text-xs font-medium text-neutral-300">
+                      <label className="text-xs font-medium text-neutral-700">
                         Designation / Role
                       </label>
                       <select
                         value={form.designation}
                         onChange={(e) => setForm({ ...form, designation: e.target.value })}
-                        className="w-full px-3.5 py-2.5 text-xs bg-neutral-950 border border-neutral-800 rounded-lg text-white focus:outline-none focus:border-sky-400 cursor-pointer"
+                        className="w-full px-3.5 py-2.5 text-xs bg-white border border-neutral-200 rounded-lg text-neutral-900 focus:outline-none focus:border-sky-400 cursor-pointer"
                       >
                         <option value="Principal / Head of Institution">Principal / Head of Institution</option>
                         <option value="Department Head (HOD)">Department Head (HOD)</option>
@@ -366,7 +366,7 @@ Notes: ${form.message || 'Please send complete quotation & itinerary.'}`;
 
                     {/* Mobile Number */}
                     <div className="space-y-1.5">
-                      <label className="text-xs font-medium text-neutral-300">
+                      <label className="text-xs font-medium text-neutral-700">
                         Mobile Number *
                       </label>
                       <input
@@ -377,12 +377,12 @@ Notes: ${form.message || 'Please send complete quotation & itinerary.'}`;
                           setForm({ ...form, phone: e.target.value });
                           if (errors.phone) setErrors({ ...errors, phone: undefined });
                         }}
-                        className={`w-full px-3.5 py-2.5 text-xs bg-neutral-950 border rounded-lg text-white placeholder:text-neutral-600 focus:outline-none transition-colors ${
-                          errors.phone ? 'border-red-500 focus:border-red-500' : 'border-neutral-800 focus:border-sky-400'
+                        className={`w-full px-3.5 py-2.5 text-xs bg-white border rounded-lg text-neutral-900 placeholder:text-neutral-400 focus:outline-none transition-colors ${
+                          errors.phone ? 'border-red-500 focus:border-red-500' : 'border-neutral-200 focus:border-sky-400'
                         }`}
                       />
                       {errors.phone && (
-                        <div className="text-[11px] text-red-400 flex items-center gap-1">
+                        <div className="text-[11px] text-red-600 flex items-center gap-1">
                           <AlertCircle className="w-3 h-3" />
                           <span>{errors.phone}</span>
                         </div>
@@ -391,7 +391,7 @@ Notes: ${form.message || 'Please send complete quotation & itinerary.'}`;
 
                     {/* Email */}
                     <div className="space-y-1.5">
-                      <label className="text-xs font-medium text-neutral-300">
+                      <label className="text-xs font-medium text-neutral-700">
                         Email Address *
                       </label>
                       <input
@@ -402,12 +402,12 @@ Notes: ${form.message || 'Please send complete quotation & itinerary.'}`;
                           setForm({ ...form, email: e.target.value });
                           if (errors.email) setErrors({ ...errors, email: undefined });
                         }}
-                        className={`w-full px-3.5 py-2.5 text-xs bg-neutral-950 border rounded-lg text-white placeholder:text-neutral-600 focus:outline-none transition-colors ${
-                          errors.email ? 'border-red-500 focus:border-red-500' : 'border-neutral-800 focus:border-sky-400'
+                        className={`w-full px-3.5 py-2.5 text-xs bg-white border rounded-lg text-neutral-900 placeholder:text-neutral-400 focus:outline-none transition-colors ${
+                          errors.email ? 'border-red-500 focus:border-red-500' : 'border-neutral-200 focus:border-sky-400'
                         }`}
                       />
                       {errors.email && (
-                        <div className="text-[11px] text-red-400 flex items-center gap-1">
+                        <div className="text-[11px] text-red-600 flex items-center gap-1">
                           <AlertCircle className="w-3 h-3" />
                           <span>{errors.email}</span>
                         </div>
@@ -416,13 +416,13 @@ Notes: ${form.message || 'Please send complete quotation & itinerary.'}`;
 
                     {/* Service Type */}
                     <div className="space-y-1.5">
-                      <label className="text-xs font-medium text-neutral-300">
+                      <label className="text-xs font-medium text-neutral-700">
                         Primary Service Required
                       </label>
                       <select
                         value={form.serviceType}
                         onChange={(e) => setForm({ ...form, serviceType: e.target.value })}
-                        className="w-full px-3.5 py-2.5 text-xs bg-neutral-950 border border-neutral-800 rounded-lg text-white focus:outline-none focus:border-sky-400 cursor-pointer"
+                        className="w-full px-3.5 py-2.5 text-xs bg-white border border-neutral-200 rounded-lg text-neutral-900 focus:outline-none focus:border-sky-400 cursor-pointer"
                       >
                         <option value="Educational Trips">Educational Trips (School / PU Excursion)</option>
                         <option value="Industry Visits (IV)">Industry Visits (IV - Engineering / Degree)</option>
@@ -433,13 +433,13 @@ Notes: ${form.message || 'Please send complete quotation & itinerary.'}`;
 
                     {/* Destination / Circuit */}
                     <div className="space-y-1.5">
-                      <label className="text-xs font-medium text-neutral-300">
+                      <label className="text-xs font-medium text-neutral-700">
                         Destination / Circuit
                       </label>
                       <select
                         value={form.destination}
                         onChange={(e) => setForm({ ...form, destination: e.target.value })}
-                        className="w-full px-3.5 py-2.5 text-xs bg-neutral-950 border border-neutral-800 rounded-lg text-white focus:outline-none focus:border-sky-400 cursor-pointer"
+                        className="w-full px-3.5 py-2.5 text-xs bg-white border border-neutral-200 rounded-lg text-neutral-900 focus:outline-none focus:border-sky-400 cursor-pointer"
                       >
                         <option value="Mysuru Royal Palace & KSIC Silk Tour">Mysuru Royal Palace & KSIC Silk Tour</option>
                         <option value="Hampi & Badami UNESCO Heritage">Hampi & Badami UNESCO Heritage</option>
@@ -453,7 +453,7 @@ Notes: ${form.message || 'Please send complete quotation & itinerary.'}`;
 
                     {/* Tentative Travel Date / Month */}
                     <div className="space-y-1.5">
-                      <label className="text-xs font-medium text-neutral-300">
+                      <label className="text-xs font-medium text-neutral-700">
                         Tentative Travel Month / Dates
                       </label>
                       <input
@@ -461,19 +461,19 @@ Notes: ${form.message || 'Please send complete quotation & itinerary.'}`;
                         placeholder="e.g. October 2026 / Mid-November"
                         value={form.tentativeDate}
                         onChange={(e) => setForm({ ...form, tentativeDate: e.target.value })}
-                        className="w-full px-3.5 py-2.5 text-xs bg-neutral-950 border border-neutral-800 rounded-lg text-white placeholder:text-neutral-600 focus:outline-none focus:border-sky-400"
+                        className="w-full px-3.5 py-2.5 text-xs bg-white border border-neutral-200 rounded-lg text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:border-sky-400"
                       />
                     </div>
 
                     {/* Number of Students / Travelers */}
                     <div className="space-y-1.5 sm:col-span-2">
-                      <label className="text-xs font-medium text-neutral-300">
+                      <label className="text-xs font-medium text-neutral-700">
                         Approximate Group Size
                       </label>
                       <select
                         value={form.travelerCount}
                         onChange={(e) => setForm({ ...form, travelerCount: e.target.value })}
-                        className="w-full px-3.5 py-2.5 text-xs bg-neutral-950 border border-neutral-800 rounded-lg text-white focus:outline-none focus:border-sky-400 cursor-pointer"
+                        className="w-full px-3.5 py-2.5 text-xs bg-white border border-neutral-200 rounded-lg text-neutral-900 focus:outline-none focus:border-sky-400 cursor-pointer"
                       >
                         <option value="20-35 Students (1 Mini-Coach / Tempo)">20–35 Students (1 Mini-Coach / Tempo)</option>
                         <option value="45-55 Students (1 Full Deluxe 2x2 Coach)">45–55 Students (1 Full Deluxe 2x2 Coach)</option>
@@ -486,7 +486,7 @@ Notes: ${form.message || 'Please send complete quotation & itinerary.'}`;
 
                   {/* Special Notes / Message */}
                   <div className="space-y-1.5">
-                    <label className="text-xs font-medium text-neutral-300">
+                    <label className="text-xs font-medium text-neutral-700">
                       Specific Requirements / Syllabus / Factory Preferences
                     </label>
                     <textarea
@@ -494,13 +494,13 @@ Notes: ${form.message || 'Please send complete quotation & itinerary.'}`;
                       placeholder="e.g. We require official factory visit certificates for 55 mechanical students, pure vegetarian meals, and 2 separate rooms for faculty guides."
                       value={form.message}
                       onChange={(e) => setForm({ ...form, message: e.target.value })}
-                      className="w-full px-3.5 py-2.5 text-xs bg-neutral-950 border border-neutral-800 rounded-lg text-white placeholder:text-neutral-600 focus:outline-none focus:border-sky-400 resize-none"
+                      className="w-full px-3.5 py-2.5 text-xs bg-white border border-neutral-200 rounded-lg text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:border-sky-400 resize-none"
                     />
                   </div>
 
                   {/* Submit Button */}
                   <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4">
-                    <div className="text-[11px] text-neutral-400">
+                    <div className="text-[11px] text-neutral-600">
                       * All enquiries receive an official response and transparent rate breakdown.
                     </div>
                     <button

@@ -24,7 +24,7 @@ export const SERVICES: ServiceItem[] = [
     title: 'Educational Trips',
     subtitle: 'Connecting Classrooms with Real-World Wonder',
     tripType: 'Educational Tour',
-    icon: <GraduationCap className="w-5 h-5 text-amber-400" />,
+    icon: <GraduationCap className="w-5 h-5 text-amber-600" />,
     imageUrl: '/src/assets/images/gallery_student_hampi_1792402557076.jpg',
     description:
       'Make learning memorable through educational excursions designed for schools and colleges. Explore historical sites, museums, science centres, cultural destinations, geographical landmarks, and other places that complement classroom education.',
@@ -42,7 +42,7 @@ export const SERVICES: ServiceItem[] = [
     title: 'Industry Visits (IV)',
     subtitle: 'Practical Industrial & Technical Exposure',
     tripType: 'Industrial Visit (IV)',
-    icon: <Factory className="w-5 h-5 text-sky-400" />,
+    icon: <Factory className="w-5 h-5 text-sky-600" />,
     imageUrl: '/src/assets/images/gallery_iv_factory_tour_1792402557123.jpg',
     description:
       'Bridge the gap between theoretical knowledge and real-world industrial practice. We assist educational institutions with travel arrangements and logistical coordination for factory, manufacturing plant, and technology site visits.',
@@ -60,7 +60,7 @@ export const SERVICES: ServiceItem[] = [
     title: 'Karnataka Special Tours',
     subtitle: 'Grand Heritage, Wildlife & Western Ghats',
     tripType: 'Karnataka Special',
-    icon: <MapPin className="w-5 h-5 text-amber-400" />,
+    icon: <MapPin className="w-5 h-5 text-amber-600" />,
     imageUrl: '/src/assets/images/hero_mysore_karnataka_1792395162647.jpg',
     description:
       'Experience the rich heritage, scenic natural beauty, and vibrant culture of Karnataka. From the grand palaces of Mysuru to the UNESCO World Heritage monuments of Hampi, we design customized itineraries showcasing the finest destinations across the state.',
@@ -78,7 +78,7 @@ export const SERVICES: ServiceItem[] = [
     title: 'Complete Tour Management & Group Travel',
     subtitle: 'Hassle-Free End-to-End Travel Logistics',
     tripType: 'Custom Group Tour',
-    icon: <Bus className="w-5 h-5 text-sky-400" />,
+    icon: <Bus className="w-5 h-5 text-sky-600" />,
     imageUrl: '/src/assets/images/gallery_coorg_bonfire_1792402557907.jpg',
     description:
       'Comprehensive travel solutions for schools, colleges, institutions, and family or corporate groups. We handle end-to-end arrangements so organizers can focus on learning and enjoying the journey.',
@@ -95,19 +95,19 @@ export const SERVICES: ServiceItem[] = [
 
 export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenBooking }) => {
   return (
-    <section id="services" className="py-20 lg:py-28 bg-neutral-950 border-b border-neutral-900">
+    <section id="services" className="py-20 lg:py-28 bg-white border-b border-neutral-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         {/* Section Header */}
         <div className="max-w-3xl space-y-3">
-          <div className="text-xs font-semibold uppercase tracking-widest text-sky-400 flex items-center gap-2">
+          <div className="text-xs font-semibold uppercase tracking-widest text-sky-600 flex items-center gap-2">
             <span>Specialized Services</span>
-            <span className="text-neutral-700">·</span>
-            <span className="text-amber-400">NRej Travelling Agency</span>
+            <span className="text-neutral-300">·</span>
+            <span className="text-amber-600">NRej Travelling Agency</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-neutral-900 tracking-tight leading-tight">
             Our Main Travel Services
           </h2>
-          <p className="text-neutral-300 text-base sm:text-lg leading-relaxed">
+          <p className="text-neutral-700 text-base sm:text-lg leading-relaxed">
             Tailored travel planning for schools, colleges, and group tours across Karnataka. We handle route planning, comfortable coaches, entry approvals, and safe stays.
           </p>
         </div>
@@ -117,54 +117,54 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenBooking 
           {SERVICES.map((service) => (
             <div
               key={service.id}
-              className="group rounded-2xl overflow-hidden bg-neutral-900 border border-neutral-800 hover:border-neutral-700 transition-all duration-300 flex flex-col shadow-lg"
+              className="group rounded-2xl overflow-hidden bg-neutral-50 border border-neutral-200 hover:border-neutral-300 transition-all duration-300 flex flex-col shadow-lg"
             >
               {/* Image Frame */}
-              <div className="relative aspect-[16/9] w-full overflow-hidden bg-neutral-950">
+              <div className="relative aspect-[16/9] w-full overflow-hidden bg-white">
                 <img
                   src={service.imageUrl}
                   alt={service.title}
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-neutral-900 via-neutral-900/40 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-neutral-50 via-neutral-50/40 to-transparent" />
 
                 {/* Service Tag */}
-                <div className="absolute top-4 left-4 flex items-center gap-2 px-3 py-1.5 rounded-lg bg-neutral-950/90 backdrop-blur-md border border-neutral-800 text-xs font-semibold text-white">
+                <div className="absolute top-4 left-4 flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/90 backdrop-blur-md border border-neutral-200 text-xs font-semibold text-neutral-900">
                   {service.icon}
                   <span>{service.title}</span>
                 </div>
 
                 {/* Target Audience badge */}
-                <div className="absolute bottom-3 left-4 right-4 text-xs font-medium text-neutral-300 truncate">
-                  Target: <span className="text-amber-400 font-semibold">{service.idealFor}</span>
+                <div className="absolute bottom-3 left-4 right-4 text-xs font-medium text-neutral-700 truncate">
+                  Target: <span className="text-amber-600 font-semibold">{service.idealFor}</span>
                 </div>
               </div>
 
               {/* Card Body */}
               <div className="p-6 sm:p-7 flex flex-col flex-grow space-y-4">
                 <div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-amber-400 transition-colors">
+                  <h3 className="text-xl sm:text-2xl font-bold text-neutral-900 group-hover:text-amber-600 transition-colors">
                     {service.title}
                   </h3>
-                  <div className="text-xs text-sky-400 font-medium mt-1">
+                  <div className="text-xs text-sky-600 font-medium mt-1">
                     {service.subtitle}
                   </div>
                 </div>
 
-                <p className="text-sm text-neutral-300 leading-relaxed">
+                <p className="text-sm text-neutral-700 leading-relaxed">
                   {service.description}
                 </p>
 
                 {/* Highlights list */}
-                <div className="space-y-2 pt-2 border-t border-neutral-800/80">
-                  <div className="text-xs font-semibold uppercase tracking-wider text-neutral-400">
+                <div className="space-y-2 pt-2 border-t border-neutral-200/80">
+                  <div className="text-xs font-semibold uppercase tracking-wider text-neutral-600">
                     Service Highlights:
                   </div>
-                  <ul className="space-y-1.5 text-xs text-neutral-300">
+                  <ul className="space-y-1.5 text-xs text-neutral-700">
                     {service.highlights.map((h, i) => (
                       <li key={i} className="flex items-start gap-2">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-sky-400 shrink-0 mt-0.5" />
+                        <CheckCircle2 className="w-3.5 h-3.5 text-sky-600 shrink-0 mt-0.5" />
                         <span>{h}</span>
                       </li>
                     ))}
@@ -172,8 +172,8 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenBooking 
                 </div>
 
                 {/* Action button */}
-                <div className="pt-4 mt-auto border-t border-neutral-800 flex items-center justify-between">
-                  <span className="text-xs text-neutral-400">
+                <div className="pt-4 mt-auto border-t border-neutral-200 flex items-center justify-between">
+                  <span className="text-xs text-neutral-600">
                     Customized itinerary available
                   </span>
                   <button

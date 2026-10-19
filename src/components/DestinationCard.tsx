@@ -19,9 +19,9 @@ export const DestinationCard: React.FC<DestinationCardProps> = ({
   const isEdu = destination.tripType === 'Educational';
 
   return (
-    <article className="group flex flex-col rounded-xl overflow-hidden bg-neutral-950 border border-neutral-900 hover:border-neutral-800 transition-all duration-300">
+    <article className="group flex flex-col rounded-xl overflow-hidden bg-white border border-neutral-50 hover:border-neutral-200 transition-all duration-300">
       {/* Visual Media Slot */}
-      <div className="relative aspect-[4/3] w-full overflow-hidden bg-black">
+      <div className="relative aspect-[4/3] w-full overflow-hidden bg-white">
         {!imageError ? (
           <img
             src={destination.imageUrl}
@@ -31,43 +31,43 @@ export const DestinationCard: React.FC<DestinationCardProps> = ({
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
           />
         ) : (
-          <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-neutral-950 to-neutral-900 p-6 text-center">
-            <Compass className="w-10 h-10 text-amber-400 mb-2 opacity-60" />
-            <span className="text-sm font-serif-luxury font-medium text-neutral-300">{destination.title}</span>
+          <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-white to-neutral-50 p-6 text-center">
+            <Compass className="w-10 h-10 text-amber-600 mb-2 opacity-60" />
+            <span className="text-sm font-serif-luxury font-medium text-neutral-700">{destination.title}</span>
             <span className="text-xs text-neutral-500 mt-1">{destination.location}</span>
           </div>
         )}
 
         {/* Ambient Gradient Scrim */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent opacity-85" />
+        <div className="absolute inset-0 bg-gradient-to-t from-white via-white/30 to-transparent opacity-85" />
 
         {/* Clean unboxed top badge: trip type */}
-        <div className="absolute top-3 left-3 flex items-center gap-1.5 px-2.5 py-1 rounded bg-black/85 backdrop-blur-sm border border-neutral-800 text-[11px] font-semibold">
+        <div className="absolute top-3 left-3 flex items-center gap-1.5 px-2.5 py-1 rounded bg-white/85 backdrop-blur-sm border border-neutral-200 text-[11px] font-semibold">
           {isIV ? (
-            <span className="flex items-center gap-1 text-cyan-400">
+            <span className="flex items-center gap-1 text-cyan-600">
               <Building2 className="w-3 h-3" />
               Industrial Visit (IV)
             </span>
           ) : isEdu ? (
-            <span className="flex items-center gap-1 text-amber-400">
+            <span className="flex items-center gap-1 text-amber-600">
               <GraduationCap className="w-3 h-3" />
               Educational Study Tour
             </span>
           ) : (
-            <span className="flex items-center gap-1 text-neutral-300">
-              <Compass className="w-3 h-3 text-amber-400" />
+            <span className="flex items-center gap-1 text-neutral-700">
+              <Compass className="w-3 h-3 text-amber-600" />
               Karnataka Holiday
             </span>
           )}
         </div>
 
         {/* Clean unboxed bottom location kicker over media */}
-        <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between text-xs text-neutral-200">
+        <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between text-xs text-neutral-800">
           <div className="flex items-center gap-1.5 font-medium drop-shadow-sm">
-            <MapPin className="w-3.5 h-3.5 text-amber-400" />
+            <MapPin className="w-3.5 h-3.5 text-amber-600" />
             <span>{destination.location}</span>
           </div>
-          <span className="font-mono text-neutral-400 text-[11px] drop-shadow-sm">
+          <span className="font-mono text-neutral-600 text-[11px] drop-shadow-sm">
             {destination.bestSeason}
           </span>
         </div>
@@ -76,53 +76,53 @@ export const DestinationCard: React.FC<DestinationCardProps> = ({
       {/* Content Details */}
       <div className="flex flex-col flex-grow p-5 space-y-4">
         {/* Unboxed Metadata Line */}
-        <div className="flex items-center gap-2 text-xs text-neutral-400 font-medium">
+        <div className="flex items-center gap-2 text-xs text-neutral-600 font-medium">
           <span>{destination.durationDays} Days Tour</span>
           <span aria-hidden="true">·</span>
-          <span className="text-amber-400/90">{destination.state}</span>
+          <span className="text-amber-600/90">{destination.state}</span>
           <span aria-hidden="true">·</span>
           <span>{destination.tripType}</span>
         </div>
 
         {/* Title */}
-        <h3 className="font-serif-luxury text-xl font-semibold text-white group-hover:text-amber-300 transition-colors leading-snug">
+        <h3 className="font-serif-luxury text-xl font-semibold text-neutral-900 group-hover:text-amber-700 transition-colors leading-snug">
           {destination.title}
         </h3>
 
         {/* Tagline / Trend Reason */}
-        <p className="text-sm text-neutral-400 line-clamp-2 leading-relaxed">
+        <p className="text-sm text-neutral-600 line-clamp-2 leading-relaxed">
           {destination.tagline}
         </p>
 
         {/* Highlight Bullets */}
-        <div className="space-y-1.5 pt-1 border-t border-neutral-900">
+        <div className="space-y-1.5 pt-1 border-t border-neutral-50">
           {destination.highlights.slice(0, 2).map((h, i) => (
-            <div key={i} className="text-xs text-neutral-400 flex items-start gap-2">
-              <span className="text-amber-400 mt-0.5">•</span>
+            <div key={i} className="text-xs text-neutral-600 flex items-start gap-2">
+              <span className="text-amber-600 mt-0.5">•</span>
               <span className="line-clamp-1">{h}</span>
             </div>
           ))}
         </div>
 
         {/* Ideal for note */}
-        <div className="text-[11px] text-cyan-400/80 font-mono line-clamp-1 bg-black/40 px-2 py-1 rounded border border-neutral-900">
+        <div className="text-[11px] text-cyan-600/80 font-mono line-clamp-1 bg-white/40 px-2 py-1 rounded border border-neutral-50">
           Ideal for: {destination.idealFor}
         </div>
 
         {/* Footer: Price in INR & Actions */}
-        <div className="pt-3 mt-auto border-t border-neutral-900 flex items-center justify-between gap-3">
+        <div className="pt-3 mt-auto border-t border-neutral-50 flex items-center justify-between gap-3">
           <div>
             <div className="text-[10px] uppercase tracking-wider text-neutral-500 font-medium">Group Rate From</div>
-            <div className="text-lg font-bold text-white tabular-nums">
+            <div className="text-lg font-bold text-neutral-900 tabular-nums">
               ₹{destination.startingPriceInr.toLocaleString('en-IN')}
-              <span className="text-xs text-neutral-400 font-normal ml-1">/ person</span>
+              <span className="text-xs text-neutral-600 font-normal ml-1">/ person</span>
             </div>
           </div>
 
           <div className="flex items-center gap-2 shrink-0">
             <button
               onClick={() => onViewDetails(destination)}
-              className="px-3 py-2 text-xs font-medium text-neutral-200 hover:text-white bg-neutral-900 hover:bg-neutral-800 rounded-lg transition-colors flex items-center gap-1.5 cursor-pointer border border-neutral-800"
+              className="px-3 py-2 text-xs font-medium text-neutral-800 hover:text-neutral-900 bg-neutral-50 hover:bg-neutral-200 rounded-lg transition-colors flex items-center gap-1.5 cursor-pointer border border-neutral-200"
             >
               <span>Itinerary</span>
               <ArrowUpRight className="w-3.5 h-3.5" />

@@ -28,7 +28,7 @@ export const TrendingSection: React.FC<TrendingSectionProps> = ({
   ];
 
   return (
-    <section id="packages" className="py-20 lg:py-28 bg-neutral-900 border-b border-neutral-800">
+    <section id="packages" className="py-20 lg:py-28 bg-neutral-50 border-b border-neutral-200">
       {/* Invisible anchor for #karnataka as requested by navbar */}
       <div id="karnataka" className="relative -top-24" />
 
@@ -36,22 +36,22 @@ export const TrendingSection: React.FC<TrendingSectionProps> = ({
         {/* Header with Editorial Hierarchy */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="space-y-3 max-w-2xl">
-            <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-sky-400">
-              <MapPin className="w-4 h-4 text-amber-400" />
+            <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-sky-600">
+              <MapPin className="w-4 h-4 text-amber-600" />
               <span>Karnataka Special Circuits & Tour Packages</span>
-              <span aria-hidden="true" className="text-neutral-700">·</span>
-              <span className="text-neutral-400 font-normal">All Prices in INR (₹)</span>
+              <span aria-hidden="true" className="text-neutral-300">·</span>
+              <span className="text-neutral-600 font-normal">All Prices in INR (₹)</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-neutral-900 tracking-tight leading-tight">
               Featured Karnataka Tour Packages
             </h2>
-            <p className="text-neutral-300 text-base sm:text-lg leading-relaxed">
+            <p className="text-neutral-700 text-base sm:text-lg leading-relaxed">
               Carefully crafted packages across Karnataka’s grand palaces, UNESCO World Heritage monuments, lush coffee estates, and coastal waterways. Complete with day-by-day itineraries and inclusions.
             </p>
           </div>
 
           {/* Interactive Filter Segmented Control */}
-          <div className="flex flex-wrap items-center gap-1.5 p-1.5 bg-neutral-950 border border-neutral-800 rounded-xl">
+          <div className="flex flex-wrap items-center gap-1.5 p-1.5 bg-white border border-neutral-200 rounded-xl">
             {categories.map((cat) => {
               const isActive = activeCategory === cat.key;
               return (
@@ -61,7 +61,7 @@ export const TrendingSection: React.FC<TrendingSectionProps> = ({
                   className={`px-3.5 py-1.5 text-xs font-medium rounded-lg transition-colors whitespace-nowrap cursor-pointer ${
                     isActive
                       ? 'bg-amber-400 text-slate-950 shadow-sm font-bold'
-                      : 'text-neutral-300 hover:text-white hover:bg-neutral-900'
+                      : 'text-neutral-700 hover:text-neutral-900 hover:bg-neutral-50'
                   }`}
                 >
                   {cat.label}
@@ -84,10 +84,10 @@ export const TrendingSection: React.FC<TrendingSectionProps> = ({
         </div>
 
         {destinations.length === 0 && (
-          <div className="py-16 text-center space-y-3 bg-neutral-950 rounded-2xl border border-neutral-800">
-            <Compass className="w-10 h-10 text-amber-400 mx-auto opacity-70" />
-            <div className="text-base font-bold text-white">No tour packages found for this filter</div>
-            <p className="text-xs text-neutral-400">
+          <div className="py-16 text-center space-y-3 bg-white rounded-2xl border border-neutral-200">
+            <Compass className="w-10 h-10 text-amber-600 mx-auto opacity-70" />
+            <div className="text-base font-bold text-neutral-900">No tour packages found for this filter</div>
+            <p className="text-xs text-neutral-600">
               We customize any route across Karnataka upon request.
             </p>
             <button
