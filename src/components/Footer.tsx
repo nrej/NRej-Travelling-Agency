@@ -1,6 +1,6 @@
 import React from 'react';
 import { Mail, Phone, MapPin, Building2, MessageSquare, ArrowUpRight, GraduationCap, Compass } from 'lucide-react';
-import NrejLogo from './NrejLogo';
+import { NrejLogo } from './NrejLogo';
 import { BUSINESS_CONFIG, getWhatsAppInquiryUrl } from '../data/businessConfig';
 
 interface FooterProps {
