@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Calendar, Globe, Compass, ArrowRight, GraduationCap, Building2, MapPin } from 'lucide-react';
-import { HERO_IMAGE, AGENCY_STATS } from '../data/destinations';
+import { Calendar, Compass, ArrowRight, GraduationCap, Building2, MapPin, MessageSquare, Phone } from 'lucide-react';
+import { BUSINESS_CONFIG, getWhatsAppInquiryUrl } from '../data/businessConfig';
 
 interface HeroProps {
   onSearch: (region: string, category: string, month: string) => void;
@@ -12,113 +12,127 @@ export const Hero: React.FC<HeroProps> = ({ onSearch, onOpenBooking }) => {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedDuration, setSelectedDuration] = useState('Any');
 
+  const heroImage = '/src/assets/images/gallery_student_hampi_1792402557076.jpg';
+
   const handleApplyFilter = () => {
     onSearch(selectedRegion, selectedCategory, selectedDuration);
-    const element = document.getElementById('trending');
+    const element = document.getElementById('packages');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
   return (
-    <section className="relative overflow-hidden bg-black">
-      {/* Hero Visual Area with Measured Scrim */}
-      <div className="relative min-h-[600px] lg:min-h-[700px] flex items-center">
-        {/* Background Image with Fallback */}
+    <section id="home" className="relative overflow-hidden bg-neutral-950">
+      {/* Hero Visual Area with High-Grade Scrim for Contrast */}
+      <div className="relative min-h-[620px] lg:min-h-[720px] flex items-center">
+        {/* Background Image: Authentic Indian students on heritage study tour */}
         <div className="absolute inset-0 z-0">
           <img
-            src={HERO_IMAGE}
-            alt="Magnificent illuminated Mysore Palace in Karnataka at twilight"
+            src={heroImage}
+            alt="Students on an educational heritage field study in Karnataka"
             referrerPolicy="no-referrer"
-            className="w-full h-full object-cover object-center scale-[1.02] transform transition-transform duration-1000 ease-out"
+            className="w-full h-full object-cover object-center scale-[1.01] transform transition-transform duration-1000 ease-out"
           />
-          {/* Measured deep black scrim gradient */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-black/55" />
-          <div className="absolute inset-0 bg-black/30 backdrop-brightness-75" />
+          {/* Deep Navy/Black Scrim Overlay for maximum text readability */}
+          <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/85 to-neutral-950/65" />
+          <div className="absolute inset-0 bg-sky-950/20 mix-blend-multiply" />
         </div>
 
         {/* Hero Content Container */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28 w-full">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 w-full">
           <div className="max-w-3xl space-y-6">
-            {/* Unboxed Kicker with Regional & Educational Scope */}
-            <div className="flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-widest text-amber-400">
-              <span className="flex items-center gap-1.5 text-cyan-400">
-                <MapPin className="w-3.5 h-3.5" />
-                South India Specialist
+            {/* Tagline & Slogan badge */}
+            <div className="flex flex-wrap items-center gap-2.5">
+              <span className="px-3 py-1 rounded-full bg-sky-500/20 border border-sky-400/40 text-sky-300 text-xs font-semibold uppercase tracking-wider flex items-center gap-1.5">
+                <MapPin className="w-3.5 h-3.5 text-amber-400" />
+                <span>{BUSINESS_CONFIG.location.village}, Karnataka</span>
               </span>
-              <span aria-hidden="true" className="text-neutral-600">·</span>
-              <span>Major Trips Across Karnataka</span>
-              <span aria-hidden="true" className="text-neutral-600">·</span>
-              <span className="text-neutral-300 font-normal">Educational & Industrial Visits</span>
+              <span className="text-amber-400 text-xs font-mono font-medium tracking-wide">
+                • {BUSINESS_CONFIG.heroSlogan}
+              </span>
             </div>
 
-            {/* Display Headline */}
-            <h1 className="font-serif-luxury text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.12] text-balance">
-              South India’s Premier Travel Agency & Karnataka Tour Specialist.
+            {/* Master Heading */}
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.12]">
+              Every Journey Is an Opportunity to Learn
             </h1>
 
-            {/* Subtitle */}
-            <p className="text-lg sm:text-xl text-neutral-300 font-light leading-relaxed max-w-2xl">
-              From the royal illuminated halls of Mysuru Palace and Hampi’s UNESCO monoliths to Coorg coffee agro-tours, collegiate Industrial Visits (IVs), and accredited school educational camps.
+            {/* Master Supporting Text */}
+            <p className="text-lg sm:text-xl text-neutral-200 font-normal leading-relaxed max-w-2xl">
+              Discover the world beyond classrooms with NRej Travelling Agency. We organize educational trips, industry visits, heritage tours, and memorable travel experiences for schools and colleges across Karnataka and beyond.
             </p>
 
-            {/* Scope Badges */}
-            <div className="flex flex-wrap items-center gap-3 pt-1 text-xs text-neutral-300">
-              <span className="flex items-center gap-1.5 px-3 py-1 rounded-md bg-neutral-900/80 border border-neutral-800 text-cyan-300">
-                <Building2 className="w-3.5 h-3.5 text-cyan-400" />
-                Industrial Visits (KSIC, HAL, Supa Dam)
-              </span>
-              <span className="flex items-center gap-1.5 px-3 py-1 rounded-md bg-neutral-900/80 border border-neutral-800 text-amber-300">
-                <GraduationCap className="w-3.5 h-3.5 text-amber-400" />
-                School & College Educational Tours
-              </span>
-              <span className="flex items-center gap-1.5 px-3 py-1 rounded-md bg-neutral-900/80 border border-neutral-800 text-neutral-300">
-                <Compass className="w-3.5 h-3.5 text-amber-400" />
-                Custom Karnataka Family & Group Holidays
-              </span>
+            {/* Smaller Supporting Line */}
+            <div className="pt-1 flex items-center gap-2 text-xs sm:text-sm font-semibold text-amber-400 uppercase tracking-wider">
+              <span>Educational Trips</span>
+              <span className="text-neutral-500">|</span>
+              <span>Industry Visits</span>
+              <span className="text-neutral-500">|</span>
+              <span>Karnataka Special Tours</span>
             </div>
 
-            {/* CTA action & trust marker */}
-            <div className="pt-3 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-              <button
-                onClick={() => onOpenBooking(undefined, 'Industrial Visit (IV)')}
-                className="px-6 py-3.5 text-xs font-semibold uppercase tracking-wider text-black bg-cyan-400 hover:bg-cyan-300 rounded-lg transition-colors flex items-center justify-center gap-2 shadow-lg shadow-cyan-400/10 cursor-pointer"
-              >
-                <Building2 className="w-4 h-4" />
-                <span>Request Industrial Visit (IV) Quote</span>
-              </button>
+            {/* CTAs: Plan Your Educational Trip, Explore Our Services, WhatsApp */}
+            <div className="pt-3 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 flex-wrap">
               <button
                 onClick={() => onOpenBooking(undefined, 'Educational')}
-                className="px-6 py-3.5 text-xs font-semibold uppercase tracking-wider text-black bg-amber-400 hover:bg-amber-300 rounded-lg transition-colors flex items-center justify-center gap-2 shadow-lg shadow-amber-400/10 cursor-pointer"
+                className="px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-slate-950 bg-amber-400 hover:bg-amber-300 rounded-lg transition-all flex items-center justify-center gap-2 shadow-lg shadow-amber-400/10 cursor-pointer font-sans"
               >
                 <GraduationCap className="w-4 h-4" />
-                <span>Book Educational Study Tour</span>
+                <span>Plan Your Educational Trip</span>
               </button>
+
               <a
-                href="#trending"
-                className="px-5 py-3.5 text-xs font-medium uppercase tracking-wider text-neutral-300 hover:text-white border border-neutral-800 hover:border-neutral-600 rounded-lg transition-colors flex items-center justify-center gap-2 bg-black/60"
+                href="#services"
+                className="px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-white hover:text-sky-300 border border-neutral-700 hover:border-sky-400 rounded-lg transition-all flex items-center justify-center gap-2 bg-neutral-900/80 cursor-pointer"
               >
-                <span>View All Karnataka Circuits</span>
+                <span>Explore Our Services</span>
+                <ArrowRight className="w-4 h-4" />
+              </a>
+
+              {/* Direct WhatsApp Enquiry Button */}
+              <a
+                href={getWhatsAppInquiryUrl()}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-5 py-3.5 text-xs font-bold text-white bg-emerald-600 hover:bg-emerald-500 rounded-lg transition-all flex items-center justify-center gap-2 shadow-md cursor-pointer"
+              >
+                <MessageSquare className="w-4 h-4" />
+                <span>WhatsApp Enquiry</span>
+              </a>
+            </div>
+
+            {/* Contact quick strip */}
+            <div className="pt-2 text-xs text-neutral-400 flex flex-wrap items-center gap-4">
+              <span>Direct Coordinator: <strong className="text-white">{BUSINESS_CONFIG.contactPerson}</strong></span>
+              <span className="text-neutral-600">•</span>
+              <a href={`tel:${BUSINESS_CONFIG.mobile1}`} className="text-sky-400 hover:underline flex items-center gap-1">
+                <Phone className="w-3 h-3" />
+                <span>{BUSINESS_CONFIG.mobile1Formatted}</span>
+              </a>
+              <span className="text-neutral-600">•</span>
+              <a href={`tel:${BUSINESS_CONFIG.mobile2}`} className="text-sky-400 hover:underline flex items-center gap-1">
+                <Phone className="w-3 h-3" />
+                <span>{BUSINESS_CONFIG.mobile2Formatted}</span>
               </a>
             </div>
           </div>
 
-          {/* Quick Search Strip for South India & Karnataka */}
-          <div className="mt-12 p-3 sm:p-4 rounded-xl bg-neutral-950/95 border border-neutral-800 backdrop-blur-md shadow-2xl max-w-4xl">
+          {/* Search / Filter Quick Finder Strip */}
+          <div className="mt-10 p-3 sm:p-4 rounded-xl bg-neutral-900/95 border border-neutral-800 backdrop-blur-md shadow-2xl max-w-4xl">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
               {/* Region Select */}
-              <div className="flex flex-col gap-1 px-3 py-2 rounded-lg bg-black border border-neutral-800/80">
+              <div className="flex flex-col gap-1 px-3 py-2 rounded-lg bg-neutral-950 border border-neutral-800">
                 <label className="text-[11px] font-medium uppercase tracking-wider text-neutral-400 flex items-center gap-1.5">
-                  <Globe className="w-3.5 h-3.5 text-cyan-400" />
-                  <span>Karnataka & South Zone</span>
+                  <MapPin className="w-3.5 h-3.5 text-sky-400" />
+                  <span>Karnataka Circuit</span>
                 </label>
                 <select
                   value={selectedRegion}
                   onChange={(e) => setSelectedRegion(e.target.value)}
                   className="bg-transparent text-sm text-neutral-100 font-medium focus:outline-none cursor-pointer"
                 >
-                  <option value="All" className="bg-neutral-950 text-white">All Karnataka & South India</option>
-                  <option value="Karnataka" className="bg-neutral-950 text-white">Karnataka (Major Circuits)</option>
+                  <option value="All" className="bg-neutral-950 text-white">All Karnataka Circuits</option>
                   <option value="Mysuru & Mandya" className="bg-neutral-950 text-white">Mysuru, Srirangapatna & Mandya</option>
                   <option value="Hampi & North Karnataka" className="bg-neutral-950 text-white">Hampi, Badami & Pattadakal</option>
                   <option value="Western Ghats & Coorg" className="bg-neutral-950 text-white">Coorg, Chikmagalur & Kabini</option>
@@ -128,29 +142,28 @@ export const Hero: React.FC<HeroProps> = ({ onSearch, onOpenBooking }) => {
               </div>
 
               {/* Trip Category */}
-              <div className="flex flex-col gap-1 px-3 py-2 rounded-lg bg-black border border-neutral-800/80">
+              <div className="flex flex-col gap-1 px-3 py-2 rounded-lg bg-neutral-950 border border-neutral-800">
                 <label className="text-[11px] font-medium uppercase tracking-wider text-neutral-400 flex items-center gap-1.5">
-                  <Compass className="w-3.5 h-3.5 text-amber-400" />
-                  <span>Trip Format</span>
+                  <GraduationCap className="w-3.5 h-3.5 text-amber-400" />
+                  <span>Service Type</span>
                 </label>
                 <select
                   value={selectedCategory}
                   onChange={(e) => setSelectedCategory(e.target.value)}
                   className="bg-transparent text-sm text-neutral-100 font-medium focus:outline-none cursor-pointer"
                 >
-                  <option value="all" className="bg-neutral-950 text-white">All Travel Formats</option>
-                  <option value="industrial" className="bg-neutral-950 text-white">Industrial Visits (IVs) for Colleges</option>
-                  <option value="educational" className="bg-neutral-950 text-white">School & College Educational Tours</option>
-                  <option value="karnataka-spotlight" className="bg-neutral-950 text-white">Karnataka Spotlight Expeditions</option>
-                  <option value="nature-wildlife" className="bg-neutral-950 text-white">Western Ghats Nature & Wildlife</option>
+                  <option value="all" className="bg-neutral-950 text-white">All Tour Types</option>
+                  <option value="educational" className="bg-neutral-950 text-white">Educational Trips (Schools & Colleges)</option>
+                  <option value="industrial" className="bg-neutral-950 text-white">Industry Visits (IVs)</option>
+                  <option value="karnataka-spotlight" className="bg-neutral-950 text-white">Karnataka Special Tours</option>
                 </select>
               </div>
 
-              {/* Duration Select */}
-              <div className="flex flex-col gap-1 px-3 py-2 rounded-lg bg-black border border-neutral-800/80">
+              {/* Duration */}
+              <div className="flex flex-col gap-1 px-3 py-2 rounded-lg bg-neutral-950 border border-neutral-800">
                 <label className="text-[11px] font-medium uppercase tracking-wider text-neutral-400 flex items-center gap-1.5">
-                  <Calendar className="w-3.5 h-3.5 text-amber-400" />
-                  <span>Duration Window</span>
+                  <Calendar className="w-3.5 h-3.5 text-sky-400" />
+                  <span>Duration</span>
                 </label>
                 <select
                   value={selectedDuration}
@@ -158,44 +171,23 @@ export const Hero: React.FC<HeroProps> = ({ onSearch, onOpenBooking }) => {
                   className="bg-transparent text-sm text-neutral-100 font-medium focus:outline-none cursor-pointer"
                 >
                   <option value="Any" className="bg-neutral-950 text-white">Any Duration</option>
-                  <option value="2-3 Days" className="bg-neutral-950 text-white">2–3 Days (Weekend / Quick IV)</option>
-                  <option value="4-5 Days" className="bg-neutral-950 text-white">4–5 Days (Standard Study Tour)</option>
-                  <option value="6+ Days" className="bg-neutral-950 text-white">6+ Days (Comprehensive Circuit)</option>
+                  <option value="2-3 Days" className="bg-neutral-950 text-white">2 to 3 Days (Weekend / Excursion)</option>
+                  <option value="4-5 Days" className="bg-neutral-950 text-white">4 to 5 Days (Extended IV)</option>
+                  <option value="Custom" className="bg-neutral-950 text-white">Customised Schedule</option>
                 </select>
               </div>
 
-              {/* Filter Button */}
-              <div className="flex items-center">
+              {/* Action */}
+              <div className="flex items-end">
                 <button
                   onClick={handleApplyFilter}
-                  className="w-full h-full min-h-[46px] px-4 py-2.5 text-xs font-semibold uppercase tracking-wider text-black bg-amber-400 hover:bg-amber-300 rounded-lg transition-colors flex items-center justify-center gap-2 cursor-pointer font-sans"
+                  className="w-full h-11 px-4 text-xs font-bold uppercase tracking-wider text-slate-950 bg-sky-400 hover:bg-sky-300 rounded-lg transition-colors flex items-center justify-center gap-2 cursor-pointer font-sans"
                 >
-                  <span>Filter Tours</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
+                  <Compass className="w-4 h-4" />
+                  <span>Find Tour Plans</span>
                 </button>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-
-      {/* 4-column KPI strip in full-width black bar */}
-      <div className="border-y border-neutral-900 bg-neutral-950">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
-            {AGENCY_STATS.map((stat, idx) => (
-              <div key={idx} className="space-y-1">
-                <div className="text-2xl sm:text-3xl font-bold tracking-tight text-white tabular-nums">
-                  {stat.value}
-                </div>
-                <div className="text-xs font-medium text-neutral-300 uppercase tracking-wider">
-                  {stat.label}
-                </div>
-                <div className="text-xs text-neutral-500">
-                  {stat.subtitle}
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </div>

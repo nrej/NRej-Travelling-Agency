@@ -1,117 +1,127 @@
 import React from 'react';
-import { ShieldCheck, Clock, Award, Building2, Bus, FileCheck } from 'lucide-react';
+import { ShieldCheck, Clock, Award, Building2, Bus, FileCheck, MapPin, Users, HeartHandshake } from 'lucide-react';
+import { BUSINESS_CONFIG } from '../data/businessConfig';
 
 export const WhyNREJ: React.FC = () => {
   return (
-    <section id="why-nrej" className="py-20 lg:py-28 bg-black border-b border-neutral-900">
+    <section id="why-nrej" className="py-20 lg:py-28 bg-neutral-950 border-b border-neutral-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
         {/* Section Header */}
         <div className="max-w-3xl space-y-3">
-          <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-cyan-400">
-            <Award className="w-4 h-4" />
-            <span>The NREJ Standard</span>
+          <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-sky-400">
+            <Award className="w-4 h-4 text-amber-400" />
+            <span>Why Choose Us</span>
             <span aria-hidden="true" className="text-neutral-700">·</span>
-            <span className="text-neutral-400 font-normal">Karnataka & South India</span>
+            <span className="text-neutral-400 font-normal">NRej Travelling Agency</span>
           </div>
-          <h2 className="font-serif-luxury text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight text-balance">
-            Why Karnataka's leading colleges, schools, and travelers choose NREJ Travels.
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+            Thoughtful Planning. Coordinated Travel Services.
           </h2>
-          <p className="text-neutral-400 text-base sm:text-lg font-light leading-relaxed">
-            Planning large-scale educational tours and industrial visits requires flawless execution: guaranteed factory gates access, reliable fleet transport, separate student safety wings, and verified hygiene.
+          <p className="text-neutral-300 text-base sm:text-lg leading-relaxed">
+            From selecting suitable destinations to arranging transportation, meals, entry tickets, and visit coordination, we help institutions plan their tours according to their educational objectives.
           </p>
         </div>
 
-        {/* Asymmetric Bento Grid in Black Theme */}
+        {/* 4 Core Pillars Grid without invented statistics */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {/* Card 1 (Span 2) */}
-          <div className="lg:col-span-2 p-8 rounded-2xl bg-neutral-950 border border-neutral-900 flex flex-col justify-between space-y-6">
+          {/* Pillar 1 (Span 2) */}
+          <div className="lg:col-span-2 p-8 rounded-2xl bg-neutral-900 border border-neutral-800 flex flex-col justify-between space-y-6">
             <div className="space-y-3">
-              <div className="text-xs font-mono text-cyan-400 font-semibold tracking-wider">
-                01. Official Factory Permissions & Government Liaison
+              <div className="text-xs font-mono text-sky-400 font-semibold tracking-wider">
+                01. Factory & Institutional Visit Coordination
               </div>
-              <h3 className="font-serif-luxury text-2xl font-bold text-white">
-                Direct institutional access to Karnataka's premier manufacturing plants.
+              <h3 className="text-2xl font-bold text-white">
+                Assistance with industrial permission protocols and plant schedules.
               </h3>
-              <p className="text-neutral-400 text-sm leading-relaxed max-w-2xl">
-                We manage official permission paperwork on college letterheads with plant authorities: KSIC silk weaving in Mysuru, HAL aerospace facilities, Supa Dam hydroelectric stations, and coffee curing complexes in Chikmagalur. We ensure students get real technical exposure with plant engineers.
+              <p className="text-neutral-300 text-sm leading-relaxed max-w-2xl">
+                We assist colleges and institutions with logistical coordination for factory, manufacturing plant, and technology site visits across Karnataka—including KSIC silk weaving in Mysuru, aerospace museums, Supa Dam, and agro-processing facilities. We coordinate travel timelines with plant shift hours for an orderly visit.
               </p>
             </div>
-            <div className="pt-4 border-t border-neutral-900 grid grid-cols-3 gap-4">
-              <div>
-                <div className="text-xl sm:text-2xl font-bold text-white tabular-nums">450+</div>
-                <div className="text-[11px] text-neutral-400 uppercase tracking-wider">College IVs Executed</div>
+            <div className="pt-4 border-t border-neutral-800 grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs text-neutral-300">
+              <div className="flex items-center gap-2">
+                <FileCheck className="w-4 h-4 text-sky-400 shrink-0" />
+                <span>Requisition letter assistance</span>
               </div>
-              <div>
-                <div className="text-xl sm:text-2xl font-bold text-white tabular-nums">100%</div>
-                <div className="text-[11px] text-neutral-400 uppercase tracking-wider">Permits Guaranteed</div>
+              <div className="flex items-center gap-2">
+                <Clock className="w-4 h-4 text-amber-400 shrink-0" />
+                <span>Punctual shift coordination</span>
               </div>
-              <div>
-                <div className="text-xl sm:text-2xl font-bold text-white tabular-nums">0</div>
-                <div className="text-[11px] text-neutral-400 uppercase tracking-wider">Permit Cancellations</div>
+              <div className="flex items-center gap-2">
+                <Building2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                <span>Technical interaction support</span>
               </div>
             </div>
           </div>
 
-          {/* Card 2 */}
-          <div className="p-8 rounded-2xl bg-neutral-950 border border-neutral-900 flex flex-col justify-between space-y-6">
+          {/* Pillar 2 */}
+          <div className="p-8 rounded-2xl bg-neutral-900 border border-neutral-800 flex flex-col justify-between space-y-6">
             <div className="space-y-3">
               <div className="text-xs font-mono text-amber-400 font-semibold tracking-wider">
-                02. Student Safety & Verified Lodging
+                02. Student Safety & Comfortable Stays
               </div>
-              <h3 className="font-serif-luxury text-2xl font-bold text-white">
-                Zero-compromise security protocols for every batch.
+              <h3 className="text-xl font-bold text-white">
+                Clean, student-friendly accommodation.
               </h3>
-              <p className="text-neutral-400 text-sm leading-relaxed">
-                Separate dedicated hotel floors for boys and girls, 24/7 security desks, certified first-aid kits in every bus, and complimentary deluxe single/twin rooms for faculty coordinators.
+              <p className="text-neutral-300 text-sm leading-relaxed">
+                We inspect partner hotels and lodges to ensure clean rooms, proper security, separate faculty rooms, and adequate amenities for student groups.
               </p>
             </div>
-            <div className="text-xs text-neutral-400 flex items-center gap-2 pt-2 border-t border-neutral-900">
-              <ShieldCheck className="w-4 h-4 text-cyan-400 shrink-0" />
-              <span>Full compliance with University educational tour directives</span>
+            <div className="pt-3 border-t border-neutral-800 text-xs text-neutral-400">
+              Strict night supervision and secure group wings.
             </div>
           </div>
 
-          {/* Card 3 */}
-          <div className="p-8 rounded-2xl bg-neutral-950 border border-neutral-900 flex flex-col justify-between space-y-6">
+          {/* Pillar 3 */}
+          <div className="p-8 rounded-2xl bg-neutral-900 border border-neutral-800 flex flex-col justify-between space-y-6">
             <div className="space-y-3">
-              <div className="text-xs font-mono text-cyan-400 font-semibold tracking-wider">
-                03. Dedicated On-Ground Tour Managers
+              <div className="text-xs font-mono text-sky-400 font-semibold tracking-wider">
+                03. Reliable Pushback Coaches & Safe Drivers
               </div>
-              <h3 className="font-serif-luxury text-2xl font-bold text-white">
-                Full-time coordinators handling tickets, food, and timing.
+              <h3 className="text-xl font-bold text-white">
+                Well-maintained tourist buses & verified commercial drivers.
               </h3>
-              <p className="text-neutral-400 text-sm leading-relaxed">
-                Faculty can focus on student learning while our dedicated team takes charge of hotel check-ins, toll booths, parking, buffet meals, and ASI entry passes.
+              <p className="text-neutral-300 text-sm leading-relaxed">
+                Our tourist buses (pushback AC and non-AC 2x2 coaches, tempo travellers) are maintained for long journeys across Karnataka’s highways, ghat roads, and cities.
               </p>
             </div>
-            <div className="text-xs text-neutral-400 flex items-center gap-2 pt-2 border-t border-neutral-900">
-              <Clock className="w-4 h-4 text-amber-400 shrink-0" />
-              <span>Direct WhatsApp live coordination with college HODs</span>
+            <div className="pt-3 border-t border-neutral-800 text-xs text-neutral-400">
+              Experienced highway drivers with valid commercial licenses.
             </div>
           </div>
 
-          {/* Card 4 (Span 2) */}
-          <div className="lg:col-span-2 p-8 rounded-2xl bg-neutral-950 border border-neutral-900 flex flex-col justify-between space-y-6">
+          {/* Pillar 4 */}
+          <div className="p-8 rounded-2xl bg-neutral-900 border border-neutral-800 flex flex-col justify-between space-y-6">
             <div className="space-y-3">
               <div className="text-xs font-mono text-amber-400 font-semibold tracking-wider">
-                04. Sanitized Luxury Coach Fleet & Pure Veg Catering
+                04. Hygienic Regional Meals & Catering
               </div>
-              <h3 className="font-serif-luxury text-2xl font-bold text-white">
-                Reliable 2x2 AC pushback coaches and hygienic buffet meals.
+              <h3 className="text-xl font-bold text-white">
+                Wholesome South Indian & regional food.
               </h3>
-              <p className="text-neutral-400 text-sm leading-relaxed max-w-2xl">
-                We operate modern 2x2 pushback air-conditioned buses with verified drivers experienced in Western Ghats hairpin bends. All tour packages include unlimited South & North Indian buffet meals with strict Jain and pure vegetarian options.
+              <p className="text-neutral-300 text-sm leading-relaxed">
+                Timely breakfast, lunch, and dinner arrangements with pure vegetarian, Jain, and non-vegetarian preferences coordinated in hygienic dining halls.
               </p>
             </div>
-            <div className="pt-4 border-t border-neutral-900 flex flex-wrap items-center gap-6 text-xs text-neutral-300">
-              <span className="flex items-center gap-2">
-                <Bus className="w-4 h-4 text-cyan-400" />
-                Air-Conditioned 50-Seater Coaches & Mini-Buses
-              </span>
-              <span className="flex items-center gap-2">
-                <FileCheck className="w-4 h-4 text-amber-400" />
-                Valid GST Invoicing for Institutional Audits
-              </span>
+            <div className="pt-3 border-t border-neutral-800 text-xs text-neutral-400">
+              Clean drinking water and fresh meal stops on schedule.
+            </div>
+          </div>
+
+          {/* Pillar 5 */}
+          <div className="p-8 rounded-2xl bg-neutral-900 border border-neutral-800 flex flex-col justify-between space-y-6">
+            <div className="space-y-3">
+              <div className="text-xs font-mono text-emerald-400 font-semibold tracking-wider">
+                05. Direct Coordination by H. Ramesh
+              </div>
+              <h3 className="text-xl font-bold text-white">
+                Personalized attention from start to finish.
+              </h3>
+              <p className="text-neutral-300 text-sm leading-relaxed">
+                Contact person H. Ramesh personally oversees planning, routes, hotel confirmations, and on-ground logistics for every group booking.
+              </p>
+            </div>
+            <div className="pt-3 border-t border-neutral-800 text-xs text-sky-400 font-medium">
+              Direct Phone: {BUSINESS_CONFIG.mobile1Formatted} / {BUSINESS_CONFIG.mobile2Formatted}
             </div>
           </div>
         </div>
