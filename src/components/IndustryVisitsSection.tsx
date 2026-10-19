@@ -14,7 +14,7 @@ export const INDUSTRIAL_CIRCUITS = [
     location: 'Mysuru & Ramanagara Corridor, Karnataka',
     industry: 'Karnataka Silk Industries Corporation (KSIC) & Sandalwood Units',
     duration: '2 to 3 Days',
-    imageUrl: '/src/assets/images/gallery_iv_factory_tour_1792402557123.jpg',
+    imageUrl: '/images/gallery_iv_factory_tour_1792402557123.jpg',
     description:
       'Observation of automated jacquard looms, raw cocoon reeling, quality inspection, and supply-chain operations in Karnataka’s iconic heritage manufacturing plants.',
     technicalKeypoints: [
@@ -31,7 +31,7 @@ export const INDUSTRIAL_CIRCUITS = [
     location: 'Supa Dam, Kali River, Dandeli (Uttara Kannada)',
     industry: 'Karnataka Power Transmission & Hydroelectric Generation Unit',
     duration: '3 to 4 Days (Combined with Dandeli Eco Tour)',
-    imageUrl: '/src/assets/images/dest_jog_falls_shivamogga_1792403116097.jpg',
+    imageUrl: '/images/dest_jog_falls_shivamogga_1792403116097.jpg',
     description:
       'Field study of massive concrete gravity dam structures, penstocks, hydroelectric turbines, transmission switchyards, and reservoir management.',
     technicalKeypoints: [
@@ -48,7 +48,7 @@ export const INDUSTRIAL_CIRCUITS = [
     location: 'Bengaluru Aerospace & Technology Corridor',
     industry: 'HAL Heritage Complex & Advanced Electronics Corridor',
     duration: '2 to 3 Days',
-    imageUrl: '/src/assets/images/dest_industrial_bangalore_1792395164842.jpg',
+    imageUrl: '/images/dest_industrial_bangalore_1792395164842.jpg',
     description:
       'Comprehensive technological tour studying indigenous fighter aircraft avionics, gas turbine jet engines, flight simulation, and satellite electronics.',
     technicalKeypoints: [
@@ -65,7 +65,7 @@ export const INDUSTRIAL_CIRCUITS = [
     location: 'Chikmagalur & Madikeri (Coorg)',
     industry: 'Modern Coffee Curing Works & Plantation Processing Units',
     duration: '3 Days / 2 Nights',
-    imageUrl: '/src/assets/images/dest_coorg_coffee_1792395163120.jpg',
+    imageUrl: '/images/dest_coorg_coffee_1792395163120.jpg',
     description:
       'Detailed look at commercial agro-processing from cherry harvesting, wet pulping, fermentation, sun drying, mechanical hulling, grading, and roasting.',
     technicalKeypoints: [

@@ -25,7 +25,7 @@ export const SERVICES: ServiceItem[] = [
     subtitle: 'Connecting Classrooms with Real-World Wonder',
     tripType: 'Educational Tour',
     icon: <GraduationCap className="w-5 h-5 text-amber-600" />,
-    imageUrl: '/src/assets/images/gallery_student_hampi_1792402557076.jpg',
+    imageUrl: '/images/gallery_student_hampi_1792402557076.jpg',
     description:
       'Make learning memorable through educational excursions designed for schools and colleges. Explore historical sites, museums, science centres, cultural destinations, geographical landmarks, and other places that complement classroom education.',
     highlights: [
@@ -43,7 +43,7 @@ export const SERVICES: ServiceItem[] = [
     subtitle: 'Practical Industrial & Technical Exposure',
     tripType: 'Industrial Visit (IV)',
     icon: <Factory className="w-5 h-5 text-sky-600" />,
-    imageUrl: '/src/assets/images/gallery_iv_factory_tour_1792402557123.jpg',
+    imageUrl: '/images/gallery_iv_factory_tour_1792402557123.jpg',
     description:
       'Bridge the gap between theoretical knowledge and real-world industrial practice. We assist educational institutions with travel arrangements and logistical coordination for factory, manufacturing plant, and technology site visits.',
     highlights: [
@@ -61,7 +61,7 @@ export const SERVICES: ServiceItem[] = [
     subtitle: 'Grand Heritage, Wildlife & Western Ghats',
     tripType: 'Karnataka Special',
     icon: <MapPin className="w-5 h-5 text-amber-600" />,
-    imageUrl: '/src/assets/images/hero_mysore_karnataka_1792395162647.jpg',
+    imageUrl: '/images/hero_mysore_karnataka_1792395162647.jpg',
     description:
       'Experience the rich heritage, scenic natural beauty, and vibrant culture of Karnataka. From the grand palaces of Mysuru to the UNESCO World Heritage monuments of Hampi, we design customized itineraries showcasing the finest destinations across the state.',
     highlights: [
@@ -79,7 +79,7 @@ export const SERVICES: ServiceItem[] = [
     subtitle: 'Hassle-Free End-to-End Travel Logistics',
     tripType: 'Custom Group Tour',
     icon: <Bus className="w-5 h-5 text-sky-600" />,
-    imageUrl: '/src/assets/images/gallery_coorg_bonfire_1792402557907.jpg',
+    imageUrl: '/images/gallery_coorg_bonfire_1792402557907.jpg',
     description:
       'Comprehensive travel solutions for schools, colleges, institutions, and family or corporate groups. We handle end-to-end arrangements so organizers can focus on learning and enjoying the journey.',
     highlights: [

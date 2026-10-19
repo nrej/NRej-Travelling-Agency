@@ -12,7 +12,7 @@ export const Hero: React.FC<HeroProps> = ({ onSearch, onOpenBooking }) => {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedDuration, setSelectedDuration] = useState('Any');
 
-  const heroImage = '/src/assets/images/gallery_student_hampi_1792402557076.jpg';
+  const heroImage = '/images/gallery_student_hampi_1792402557076.jpg';
 
   const handleApplyFilter = () => {
     onSearch(selectedRegion, selectedCategory, selectedDuration);
