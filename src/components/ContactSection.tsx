@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Phone, Mail, MapPin, Send, CheckCircle2, MessageSquare, AlertCircle, Building2, User, Calendar, Users, FileText } from 'lucide-react';
 import { BUSINESS_CONFIG, getWhatsAppInquiryUrl } from '../data/businessConfig';
-import { submitNetlifyForm } from '../lib/submitForm';
 
 interface FormState {
   fullName: string;
@@ -34,8 +33,8 @@ export const ContactSection: React.FC = () => {
   const [errors, setErrors] = useState<Partial<Record<keyof FormState, string>>>({});
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [referenceId, setReferenceId] = useState('');
-  const [isSending, setIsSending] = useState(false);
-  const [sendError, setSendError] = useState('');
+  const isSending = false;
+  const sendError = '';
 
   const validate = (): boolean => {
     const newErrors: Partial<Record<keyof FormState, string>> = {};
@@ -67,22 +66,23 @@ export const ContactSection: React.FC = () => {
 
     const ref = `NREJ-${new Date().getFullYear()}-${Math.floor(10000 + Math.random() * 90000)}`;
 
-    setSendError('');
-    setIsSending(true);
-    try {
-      await submitNetlifyForm('contact-enquiry', {
-        subject: `New tour enquiry ${ref} from ${form.fullName}`,
-        referenceId: ref,
-        ...form,
-      });
-    } catch {
-      setSendError(
-        `We couldn't send your enquiry. Please try again, or contact us on WhatsApp or at ${BUSINESS_CONFIG.email}.`,
-      );
-      return;
-    } finally {
-      setIsSending(false);
-    }
+    const lines = [
+      '*New Tour Enquiry - NRej Travelling Agency*',
+      `Ref: ${ref}`,
+      '',
+      `*Name:* ${form.fullName}`,
+      `*Organization:* ${form.institutionName} (${form.designation})`,
+      `*Email:* ${form.email}`,
+      `*Mobile:* ${form.phone}`,
+      `*Destination:* ${form.destination}`,
+      `*Service Format:* ${form.serviceType}`,
+      `*Traveler Count:* ${form.travelerCount}`,
+      `*Expected Dates:* ${form.tentativeDate || 'Not specified'}`,
+      `*Requirements:* ${form.message || 'None specified'}`,
+    ];
+    const whatsappUrl = `https://wa.me/917676172921?text=${encodeURIComponent(lines.join('\n'))}`;
+    const opened = window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+    if (!opened) window.location.href = whatsappUrl;
 
     setReferenceId(ref);
     setIsSubmitted(true);
