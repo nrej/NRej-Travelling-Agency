@@ -79,21 +79,21 @@ export const INDUSTRIAL_CIRCUITS = [
 
 export const IndustryVisitsSection: React.FC<IndustryVisitsProps> = ({ onOpenBooking }) => {
   return (
-    <section id="industrial" className="py-20 lg:py-28 bg-neutral-950 border-b border-neutral-900">
+    <section id="industrial" className="py-20 lg:py-28 bg-white border-b border-neutral-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="space-y-3 max-w-2xl">
-            <div className="text-xs font-semibold uppercase tracking-widest text-sky-400 flex items-center gap-2">
-              <Factory className="w-4 h-4 text-amber-400" />
+            <div className="text-xs font-semibold uppercase tracking-widest text-sky-600 flex items-center gap-2">
+              <Factory className="w-4 h-4 text-amber-600" />
               <span>Collegiate Industrial Visits (IV)</span>
-              <span className="text-neutral-700">·</span>
-              <span className="text-neutral-400 font-normal">Karnataka Industry Sectors</span>
+              <span className="text-neutral-300">·</span>
+              <span className="text-neutral-600 font-normal">Karnataka Industry Sectors</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-neutral-900 tracking-tight leading-tight">
               Bridging Classroom Theory & Industrial Practice
             </h2>
-            <p className="text-neutral-300 text-base sm:text-lg leading-relaxed">
+            <p className="text-neutral-700 text-base sm:text-lg leading-relaxed">
               We assist colleges and institutions with logistical coordination and travel arrangements for factory, manufacturing plant, and technology site visits across Karnataka.
             </p>
           </div>
@@ -114,24 +114,24 @@ export const IndustryVisitsSection: React.FC<IndustryVisitsProps> = ({ onOpenBoo
           {INDUSTRIAL_CIRCUITS.map((circuit) => (
             <div
               key={circuit.id}
-              className="group rounded-2xl overflow-hidden bg-neutral-900 border border-neutral-800 hover:border-neutral-700 transition-all flex flex-col"
+              className="group rounded-2xl overflow-hidden bg-neutral-50 border border-neutral-200 hover:border-neutral-300 transition-all flex flex-col"
             >
               {/* Media Frame */}
-              <div className="relative aspect-[16/9] w-full overflow-hidden bg-neutral-950">
+              <div className="relative aspect-[16/9] w-full overflow-hidden bg-white">
                 <img
                   src={circuit.imageUrl}
                   alt={circuit.title}
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-neutral-900 via-neutral-900/40 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-neutral-50 via-neutral-50/40 to-transparent" />
 
-                <div className="absolute top-3 left-3 px-2.5 py-1 rounded bg-neutral-950/90 backdrop-blur-sm border border-neutral-800 text-[11px] font-semibold text-sky-400">
+                <div className="absolute top-3 left-3 px-2.5 py-1 rounded bg-white/90 backdrop-blur-sm border border-neutral-200 text-[11px] font-semibold text-sky-600">
                   {circuit.duration}
                 </div>
 
-                <div className="absolute bottom-3 left-3 right-3 text-xs text-neutral-300 flex items-center gap-1.5 font-medium truncate">
-                  <Factory className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                <div className="absolute bottom-3 left-3 right-3 text-xs text-neutral-700 flex items-center gap-1.5 font-medium truncate">
+                  <Factory className="w-3.5 h-3.5 text-amber-600 shrink-0" />
                   <span>{circuit.industry}</span>
                 </div>
               </div>
@@ -139,30 +139,30 @@ export const IndustryVisitsSection: React.FC<IndustryVisitsProps> = ({ onOpenBoo
               {/* Body */}
               <div className="p-6 flex flex-col flex-grow space-y-4">
                 <div>
-                  <div className="text-[11px] font-semibold uppercase tracking-wider text-amber-400">
+                  <div className="text-[11px] font-semibold uppercase tracking-wider text-amber-600">
                     Target: {circuit.targetDepts}
                   </div>
-                  <h3 className="text-xl font-bold text-white group-hover:text-sky-400 transition-colors mt-1">
+                  <h3 className="text-xl font-bold text-neutral-900 group-hover:text-sky-600 transition-colors mt-1">
                     {circuit.title}
                   </h3>
-                  <div className="text-xs text-neutral-400 mt-0.5">
+                  <div className="text-xs text-neutral-600 mt-0.5">
                     {circuit.location}
                   </div>
                 </div>
 
-                <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed">
+                <p className="text-xs sm:text-sm text-neutral-700 leading-relaxed">
                   {circuit.description}
                 </p>
 
                 {/* Technical Highlights */}
-                <div className="space-y-2 pt-2 border-t border-neutral-800">
-                  <div className="text-[11px] font-semibold uppercase tracking-wider text-neutral-400">
+                <div className="space-y-2 pt-2 border-t border-neutral-200">
+                  <div className="text-[11px] font-semibold uppercase tracking-wider text-neutral-600">
                     Industrial Learning Outcomes:
                   </div>
-                  <ul className="space-y-1.5 text-xs text-neutral-300">
+                  <ul className="space-y-1.5 text-xs text-neutral-700">
                     {circuit.technicalKeypoints.map((pt, i) => (
                       <li key={i} className="flex items-start gap-2">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-sky-400 shrink-0 mt-0.5" />
+                        <CheckCircle2 className="w-3.5 h-3.5 text-sky-600 shrink-0 mt-0.5" />
                         <span>{pt}</span>
                       </li>
                     ))}
@@ -170,8 +170,8 @@ export const IndustryVisitsSection: React.FC<IndustryVisitsProps> = ({ onOpenBoo
                 </div>
 
                 {/* Action */}
-                <div className="pt-4 mt-auto border-t border-neutral-800 flex items-center justify-between">
-                  <span className="text-[11px] text-neutral-400">
+                <div className="pt-4 mt-auto border-t border-neutral-200 flex items-center justify-between">
+                  <span className="text-[11px] text-neutral-600">
                     Permission documentation support
                   </span>
                   <button
@@ -191,32 +191,32 @@ export const IndustryVisitsSection: React.FC<IndustryVisitsProps> = ({ onOpenBoo
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-4">
           {[
             {
-              icon: <FileText className="w-5 h-5 text-amber-400" />,
+              icon: <FileText className="w-5 h-5 text-amber-600" />,
               title: 'Permission Protocol Support',
               desc: 'Guidance with institutional requisition letters and factory entry protocols.',
             },
             {
-              icon: <Clock className="w-5 h-5 text-sky-400" />,
+              icon: <Clock className="w-5 h-5 text-sky-600" />,
               title: 'Shift-Aligned Schedules',
               desc: 'Punctual transit times coordinated strictly with industrial shift timings.',
             },
             {
-              icon: <ShieldCheck className="w-5 h-5 text-emerald-400" />,
+              icon: <ShieldCheck className="w-5 h-5 text-emerald-600" />,
               title: 'Verified Commercial Buses',
               desc: 'Experienced commercial drivers, clean 2x2 pushback coaches with first-aid kits.',
             },
             {
-              icon: <Users className="w-5 h-5 text-amber-400" />,
+              icon: <Users className="w-5 h-5 text-amber-600" />,
               title: 'Faculty & Student Care',
               desc: 'Separate faculty rooms, clean student accommodation, and hygienic food.',
             },
           ].map((item, idx) => (
-            <div key={idx} className="p-5 rounded-xl bg-neutral-900 border border-neutral-800 space-y-2">
-              <div className="w-10 h-10 rounded-lg bg-neutral-950 border border-neutral-800 flex items-center justify-center">
+            <div key={idx} className="p-5 rounded-xl bg-neutral-50 border border-neutral-200 space-y-2">
+              <div className="w-10 h-10 rounded-lg bg-white border border-neutral-200 flex items-center justify-center">
                 {item.icon}
               </div>
-              <h4 className="text-sm font-bold text-white">{item.title}</h4>
-              <p className="text-xs text-neutral-400 leading-relaxed">{item.desc}</p>
+              <h4 className="text-sm font-bold text-neutral-900">{item.title}</h4>
+              <p className="text-xs text-neutral-600 leading-relaxed">{item.desc}</p>
             </div>
           ))}
         </div>

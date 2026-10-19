@@ -88,7 +88,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-neutral-950 text-neutral-100 flex flex-col font-sans selection:bg-amber-400 selection:text-slate-950">
+    <div className="min-h-screen bg-white text-neutral-900 flex flex-col font-sans selection:bg-amber-400 selection:text-slate-950">
       {/* 1. Sticky Navigation Bar with Official Logo, Contact Strip & Working Mobile Menu */}
       <Navbar onOpenBooking={handleOpenBooking} />
 

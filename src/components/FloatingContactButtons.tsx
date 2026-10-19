@@ -14,7 +14,7 @@ export const FloatingContactButtons: React.FC = () => {
       {/* Scroll to Top Button */}
       <button
         onClick={scrollToTop}
-        className="w-10 h-10 rounded-full bg-neutral-900/90 border border-neutral-700 text-neutral-300 hover:text-white hover:bg-neutral-800 transition-all flex items-center justify-center shadow-lg cursor-pointer"
+        className="w-10 h-10 rounded-full bg-neutral-50/90 border border-neutral-300 text-neutral-700 hover:text-neutral-900 hover:bg-neutral-200 transition-all flex items-center justify-center shadow-lg cursor-pointer"
         aria-label="Scroll to top"
         title="Scroll to top"
       >
@@ -23,28 +23,28 @@ export const FloatingContactButtons: React.FC = () => {
 
       {/* Call Menu Popup if active */}
       {showCallMenu && (
-        <div className="bg-neutral-900 border border-neutral-800 rounded-2xl p-3.5 shadow-2xl flex flex-col gap-2 min-w-[240px] text-xs">
-          <div className="flex items-center justify-between pb-1.5 border-b border-neutral-800">
-            <span className="font-semibold text-white">Call {BUSINESS_CONFIG.contactPerson}</span>
+        <div className="bg-neutral-50 border border-neutral-200 rounded-2xl p-3.5 shadow-2xl flex flex-col gap-2 min-w-[240px] text-xs">
+          <div className="flex items-center justify-between pb-1.5 border-b border-neutral-200">
+            <span className="font-semibold text-neutral-900">Call {BUSINESS_CONFIG.contactPerson}</span>
             <button
               onClick={() => setShowCallMenu(false)}
-              className="text-neutral-400 hover:text-white"
+              className="text-neutral-600 hover:text-neutral-900"
             >
               <X className="w-4 h-4" />
             </button>
           </div>
           <a
             href={`tel:${BUSINESS_CONFIG.mobile1}`}
-            className="flex items-center gap-2 p-2 rounded-lg bg-neutral-950 hover:bg-neutral-800 text-white transition-colors"
+            className="flex items-center gap-2 p-2 rounded-lg bg-white hover:bg-neutral-200 text-neutral-900 transition-colors"
           >
-            <Phone className="w-3.5 h-3.5 text-sky-400" />
+            <Phone className="w-3.5 h-3.5 text-sky-600" />
             <span>Line 1: {BUSINESS_CONFIG.mobile1Formatted}</span>
           </a>
           <a
             href={`tel:${BUSINESS_CONFIG.mobile2}`}
-            className="flex items-center gap-2 p-2 rounded-lg bg-neutral-950 hover:bg-neutral-800 text-white transition-colors"
+            className="flex items-center gap-2 p-2 rounded-lg bg-white hover:bg-neutral-200 text-neutral-900 transition-colors"
           >
-            <Phone className="w-3.5 h-3.5 text-sky-400" />
+            <Phone className="w-3.5 h-3.5 text-sky-600" />
             <span>Line 2: {BUSINESS_CONFIG.mobile2Formatted}</span>
           </a>
         </div>
