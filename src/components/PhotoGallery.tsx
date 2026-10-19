@@ -14,6 +14,10 @@ export interface GalleryItem {
   takeaways: string[];
 }
 
+interface PhotoGalleryProps {
+  onOpenBooking?: (destinationTitle?: string, tripType?: string) => void;
+}
+
 export const GALLERY_ITEMS: GalleryItem[] = [
   {
     id: 'g-1',
@@ -41,7 +45,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     batchSize: '85 Students · 3 Faculty Guides',
     location: 'Hampi UNESCO World Heritage Site, Karnataka',
     date: 'Recent Batch',
-    imageUrl: 'https://images.unsplash.com/photo-1609137144813-7524672bc312?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1627916607164-7b20241db935?auto=format&fit=crop&w=1200&q=80',
     description: 'A 3-day experiential field survey analyzing Vijayanagara monolithic architecture, stepwell hydraulics, and temple acoustics at Vittala Temple, guided by certified ASI historians.',
     takeaways: [
       'Comprehensive on-site architectural drawings & acoustic analysis',
@@ -119,7 +123,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   },
 ];
 
-export function PhotoGallery() {
+export function PhotoGallery({ onOpenBooking }: PhotoGalleryProps) {
   const [activeFilter, setActiveFilter] = useState<'all' | 'industrial' | 'educational' | 'camping'>('all');
 
   const filteredItems = activeFilter === 'all'
@@ -127,19 +131,22 @@ export function PhotoGallery() {
     : GALLERY_ITEMS.filter((item) => item.category === activeFilter);
 
   return (
-    <section id="gallery" className="py-16 bg-slate-50">
+    <section id="gallery" className="py-16 bg-slate-50 border-t border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-10">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-semibold uppercase tracking-wider mb-3">
+            On-Ground Experience
+          </div>
           <h2 className="text-3xl font-extrabold text-slate-900 tracking-tight sm:text-4xl">
             Recent Tour & Industrial Visit Gallery
           </h2>
-          <p className="mt-3 text-lg text-slate-600">
-            Real snapshots from educational tours, college industrial visits, and adventure camps organized across South India.
+          <p className="mt-3 text-base text-slate-600">
+            Real field snapshots from university industrial visits, archaeological field studies, and adventure youth camps organized by NReJ Travelling Agency.
           </p>
 
-          {/* Category Filter Tabs */}
+          {/* Category Tabs */}
           <div className="flex flex-wrap justify-center gap-2 mt-6">
             {[
               { key: 'all', label: 'All Photos' },
@@ -149,11 +156,12 @@ export function PhotoGallery() {
             ].map((tab) => (
               <button
                 key={tab.key}
+                type="button"
                 onClick={() => setActiveFilter(tab.key as any)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200 ${
                   activeFilter === tab.key
-                    ? 'bg-blue-600 text-white shadow-sm'
-                    : 'bg-white text-slate-700 hover:bg-slate-200 border border-slate-200'
+                    ? 'bg-blue-600 text-white shadow-md'
+                    : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200'
                 }`}
               >
                 {tab.label}
@@ -162,15 +170,15 @@ export function PhotoGallery() {
           </div>
         </div>
 
-        {/* Gallery Grid */}
+        {/* Gallery Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredItems.map((item) => (
             <div
               key={item.id}
-              className="flex flex-col bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 border border-slate-200"
+              className="flex flex-col bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200 group"
             >
-              {/* Photo Container */}
-              <div className="relative w-full h-64 bg-slate-200 overflow-hidden group">
+              {/* Image Frame */}
+              <div className="relative w-full h-60 bg-slate-200 overflow-hidden">
                 <img
                   src={item.imageUrl}
                   alt={item.title}
@@ -178,17 +186,17 @@ export function PhotoGallery() {
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   onError={(e) => {
-                    // Safe fallback placeholder if an image is blocked
+                    // Safe fallback if network blocks image
                     (e.currentTarget as HTMLImageElement).src =
                       'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=80';
                   }}
                 />
-                <span className="absolute top-3 left-3 bg-slate-900/80 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
+                <span className="absolute top-3 left-3 bg-slate-900/80 backdrop-blur-md text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
                   {item.categoryLabel}
                 </span>
               </div>
 
-              {/* Card Body */}
+              {/* Card Content */}
               <div className="p-6 flex-1 flex flex-col justify-between">
                 <div>
                   <p className="text-xs font-semibold text-blue-600 tracking-wide uppercase">
@@ -205,12 +213,12 @@ export function PhotoGallery() {
                   </p>
                 </div>
 
-                {/* Key Takeaways */}
+                {/* Takeaways & Action Button */}
                 <div className="mt-5 pt-4 border-t border-slate-100">
                   <p className="text-xs font-bold text-slate-800 uppercase tracking-wider mb-2">
                     Key Highlights
                   </p>
-                  <ul className="space-y-1.5">
+                  <ul className="space-y-1.5 mb-5">
                     {item.takeaways.map((takeaway, i) => (
                       <li key={i} className="text-xs text-slate-600 flex items-start gap-2">
                         <span className="text-emerald-600 font-bold">✓</span>
@@ -218,6 +226,16 @@ export function PhotoGallery() {
                       </li>
                     ))}
                   </ul>
+
+                  {onOpenBooking && (
+                    <button
+                      type="button"
+                      onClick={() => onOpenBooking(item.title, item.categoryLabel)}
+                      className="w-full py-2.5 px-4 bg-slate-900 hover:bg-blue-600 text-white text-xs font-semibold rounded-xl transition-colors duration-200 text-center"
+                    >
+                      Plan Similar Tour →
+                    </button>
+                  )}
                 </div>
               </div>
             </div>
@@ -229,5 +247,4 @@ export function PhotoGallery() {
   );
 }
 
-// Allows both default and named imports
 export default PhotoGallery;
