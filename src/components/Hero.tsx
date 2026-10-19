@@ -35,7 +35,7 @@ export const Hero: React.FC<HeroProps> = ({ onSearch, onOpenBooking }) => {
             className="w-full h-full object-cover object-center scale-[1.01] transform transition-transform duration-1000 ease-out"
           />
           {/* Deep Navy/Black Scrim Overlay for maximum text readability */}
-          <div className="absolute inset-0 bg-gradient-to-t from-white via-white/85 to-white/65" />
+          <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/70 to-white/20" />
           <div className="absolute inset-0 bg-sky-50 mix-blend-multiply" />
         </div>
 

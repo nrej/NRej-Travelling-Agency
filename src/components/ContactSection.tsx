@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Phone, Mail, MapPin, Send, CheckCircle2, MessageSquare, AlertCircle, Building2, User, Calendar, Users, FileText } from 'lucide-react';
 import { BUSINESS_CONFIG, getWhatsAppInquiryUrl } from '../data/businessConfig';
+import { submitNetlifyForm } from '../lib/submitForm';
 
 interface FormState {
   fullName: string;
@@ -33,6 +34,8 @@ export const ContactSection: React.FC = () => {
   const [errors, setErrors] = useState<Partial<Record<keyof FormState, string>>>({});
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [referenceId, setReferenceId] = useState('');
+  const [isSending, setIsSending] = useState(false);
+  const [sendError, setSendError] = useState('');
 
   const validate = (): boolean => {
     const newErrors: Partial<Record<keyof FormState, string>> = {};
@@ -58,11 +61,29 @@ export const ContactSection: React.FC = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!validate()) return;
+    if (isSending || !validate()) return;
 
     const ref = `NREJ-${new Date().getFullYear()}-${Math.floor(10000 + Math.random() * 90000)}`;
+
+    setSendError('');
+    setIsSending(true);
+    try {
+      await submitNetlifyForm('contact-enquiry', {
+        subject: `New tour enquiry ${ref} from ${form.fullName}`,
+        referenceId: ref,
+        ...form,
+      });
+    } catch {
+      setSendError(
+        `We couldn't send your enquiry. Please try again, or contact us on WhatsApp or at ${BUSINESS_CONFIG.email}.`,
+      );
+      return;
+    } finally {
+      setIsSending(false);
+    }
+
     setReferenceId(ref);
     setIsSubmitted(true);
 
@@ -499,16 +520,23 @@ Notes: ${form.message || 'Please send complete quotation & itinerary.'}`;
                   </div>
 
                   {/* Submit Button */}
+                  {sendError && (
+                    <div className="p-3.5 rounded-xl bg-red-50 border border-red-200 text-xs text-red-700 flex items-start gap-2">
+                      <AlertCircle className="w-4 h-4 shrink-0" />
+                      <span>{sendError}</span>
+                    </div>
+                  )}
                   <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4">
                     <div className="text-[11px] text-neutral-600">
                       * All enquiries receive an official response and transparent rate breakdown.
                     </div>
                     <button
                       type="submit"
-                      className="w-full sm:w-auto px-7 py-3 text-xs font-bold uppercase tracking-wider text-slate-950 bg-amber-400 hover:bg-amber-300 rounded-lg transition-colors flex items-center justify-center gap-2 shadow-lg shadow-amber-400/10 cursor-pointer font-sans"
+                      disabled={isSending}
+                      className="w-full sm:w-auto px-7 py-3 text-xs font-bold uppercase tracking-wider text-slate-950 bg-amber-400 hover:bg-amber-300 disabled:opacity-60 disabled:cursor-wait rounded-lg transition-colors flex items-center justify-center gap-2 shadow-lg shadow-amber-400/10 cursor-pointer font-sans"
                     >
                       <Send className="w-4 h-4" />
-                      <span>Submit Official Tour Enquiry</span>
+                      <span>{isSending ? 'Sending…' : 'Submit Official Tour Enquiry'}</span>
                     </button>
                   </div>
                 </form>
